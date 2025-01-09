@@ -1,0 +1,414 @@
+
+// --------------------
+// Gutenberg Blocks
+// ------------------
+
+// Blocks Width & Spacing -- Editor
+
+.wp-block
+	max-width var(--wrapper-narrow)
+	&[data-align="wide"]
+		max-width var(--wrapper)
+		margin-top var(--spacer-lg)
+		margin-bottom var(--spacer-lg)
+	&[data-align="full"]
+		max-width none
+		margin-top var(--spacer-lg)
+		margin-bottom var(--spacer-lg)
+		padding-left 10px
+		padding-right 10px
+
+// Blocks Width & Spacing -- Front End
+
+.entry-content > [class*="wp-block"]
+	{wrapper-narrow}
+
+	&.alignwide
+		{wrapper}
+		margin-top var(--spacer-lg)
+		margin-bottom var(--spacer-lg)
+		.alignwide
+			{wrapper}
+		.alignfull
+			max-width none
+
+	&.alignfull
+		margin-top var(--spacer-lg)
+		margin-bottom var(--spacer-lg)
+		max-width none
+		margin-left auto
+		margin-right auto
+		.alignwide
+			{wrapper}
+		.alignfull
+			max-width none
+			margin-left auto
+			margin-right auto
+
+
+
+
+
+// Columns
+
+.entry-content .wp-block-columns
+	{wrapper-narrow}
+
+.wp-block-columns
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	flex-wrap nowrap
+	.wp-block-columns
+		margin-left 0
+		margin-right 0
+	.wp-block-column
+		flex-grow 1
+		& > :first-child
+			margin-top 0
+		& > :last-child
+			margin-bottom 0
+		&:not(:first-child)
+			margin-left var(--spacer-md)
+
+
+
+
+// Spacer
+
+.wp-block-spacer + *
+	margin-top 0
+
+
+
+
+// Group
+
+.entry-content > .wp-block-group
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+.wp-block-group
+	.wp-block-group__inner-container
+		& > :first-child
+			margin-top 0
+		& > :last-child
+			margin-bottom 0
+	&.has-background
+		.wp-block-group__inner-container
+			padding 3.5rem 4rem
+			{box-shadow}
+
+
+
+
+// Cover
+
+body.page-template-without-page-header .entry-content > .wp-block-cover:first-child // First Child
+	margin-top calc(var(--spacer-md) / -2) !important
+
+.wp-block-cover
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	padding var(--spacer-md)
+	{box-shadow}
+	.wp-block-cover__inner-container
+		color currentColor
+		& > :first-child
+			margin-top 0
+		& > :last-child
+			margin-bottom 0
+		p
+			{wrapper-narrow}
+			strong
+				color currentColor
+		a
+			color currentColor
+			&:hover
+				color var(--secondary-color)
+
+		blockquote
+		.wp-block-quote
+		.wp-block-pullquote
+		.wp-block-quote.is-style-large
+			p::after
+				background none
+		.wp-block-image
+			margin-bottom 0
+			figure
+				margin-top 0
+				margin-bottom 0
+			& + h1, h2, h3, h4, h5, h6
+				margin-top calc(var(--spacer-sm) - 1rem)
+
+@media (max-width: 640px)
+	.wp-block-cover
+		padding-left var(--spacer-sm)
+		padding-right var(--spacer-sm)
+
+
+
+
+// Media
+
+.wp-block-media-text
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	{box-shadow}
+	&.is-image-fill figure.wp-block-media-text__media
+		min-height 350px
+	.wp-block-media-text__content
+		padding var(--spacer-md) calc(var(--spacer-md) + 1rem)
+		& > :first-child
+			margin-top 0
+		& > :last-child
+			margin-bottom 0
+		.wp-block-buttons
+			max-width initial
+
+@media (max-width: 1920px)
+	.wp-block-media-text
+		.wp-block-media-text__content
+			padding var(--spacer-md)
+
+@media (max-width: 1112px)
+	.wp-block-media-text
+		.wp-block-media-text__content
+			padding 3.5rem
+
+@media (max-width: 834px)
+	.wp-block-media-text.is-stacked-on-mobile
+		grid-template-columns 100% !important
+		.wp-block-media-text__media
+			grid-column 1
+		.wp-block-media-text__content
+			grid-column 1
+			grid-row 2
+
+@media (max-width: 640px)
+	.wp-block-media-text
+		&.is-image-fill figure.wp-block-media-text__media
+			min-height 250px
+		.wp-block-media-text__content
+			padding var(--spacer-sm)
+
+
+
+
+// Separators
+
+.wp-block-separator
+	&:not(.has-background)
+		opacity .25
+	&:not(.is-style-wide):not(.is-style-dots)
+		{wrapper-narrow}
+	&.is-style-wide
+		{wrapper}
+	&.is-style-dots
+		height .5rem
+		line-height .5rem
+		&::before
+			display inline-block
+			vertical-align middle
+			font-size 4.5rem
+			letter-spacing 1em
+			padding-left 1em
+			color currentColor
+
+
+
+
+// Pullquotes
+
+.wp-block-pullquote
+	&.alignleft
+	&.alignright
+		p
+			font-size 1.5rem
+			line-height 2.5rem
+	&.alignleft
+		float left
+		max-width inherit
+		margin 1rem 2.5rem 1.5rem 0
+		blockquote
+			margin 0
+	&.alignright
+		float right
+		max-width inherit
+		margin 1rem 0 1.5rem 2.5rem
+		blockquote
+			margin 0
+
+
+
+
+
+// Social Icons
+
+ul.wp-block-social-links
+	.wp-social-link
+		margin 0 .75rem
+	&.alignright
+		justify-content flex-end
+
+
+
+
+// Gallery
+
+.wp-block-gallery
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	.blocks-gallery-grid
+		max-width initial
+		margin 0 0 -16px
+	li
+		padding-left 0 !important
+		&::before
+			display none !important
+	.gallery-caption
+		display block
+
+
+
+
+
+
+// Embeds
+
+.wp-block-embed
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	text-align center
+	iframe
+		display block
+		margin-left auto
+		margin-right auto
+
+.wp-block-video
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	video
+		display block
+
+.wp-block-embed-twitter
+	.twitter-tweet
+		margin-left auto
+		margin-right auto
+
+.wp-block-audio
+	figcaption
+		color var(--text-color)
+
+
+
+
+
+// -----------------
+// Old WP Styles
+// ---------------
+
+// Smiley
+
+.wp-smiley
+	margin 0 !important
+	max-height 1em
+
+// Gallery
+
+.gallery
+	{wrapper-narrow}
+	padding 0
+	display flex
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	// margin-bottom -3% !important
+	.gallery-item
+		width 100%
+		display inline-block
+		max-width 30.33%
+		margin 0 1.5% 3%
+		padding-left 0
+		text-align center
+		img
+			margin-left auto
+			margin-right auto
+		.gallery-item
+			width 100%
+
+.gallery-columns-1
+	// margin-bottom -5% !important
+	.gallery-item
+		max-width 100%
+		margin 0 0 5%
+
+.gallery-columns-2
+	.gallery-item
+		max-width 47%
+
+.gallery-columns-3
+	.gallery-item
+		max-width 30.33%
+
+.gallery-columns-4
+	.gallery-item
+		max-width 22%
+
+.gallery-columns-5
+	.gallery-item
+		max-width 17%
+
+.gallery-columns-6
+	.gallery-item
+		max-width 13.66%
+
+.gallery-columns-7
+	.gallery-item
+		max-width 11.285%
+
+.gallery-columns-8
+	.gallery-item
+		max-width 9.5%
+
+.gallery-columns-9
+	.gallery-item
+		max-width 8.11%
+
+.gallery-columns-6
+.gallery-columns-7
+.gallery-columns-8
+.gallery-columns-9
+	.gallery-caption
+		display none
+
+
+
+
+
+// --------------------------------------
+// Text meant only for screen readers.
+// -------------------------------------
+
+.screen-reader-text
+	clip rect(1px, 1px, 1px, 1px)
+	position absolute !important
+	height 1px
+	width 1px
+	overflow hidden
+
+.screen-reader-text:focus
+	background-color var(--text-color)
+	border-radius 3px
+	box-shadow 0 0 2px 2px rgba(0, 0, 0, 0.6)
+	clip auto !important
+	color #21759b
+	display block
+	font-size .875rem
+	font-weight bold
+	height auto
+	left 5px
+	line-height normal
+	padding 1rem 1.5rem 1rem
+	text-decoration none
+	top 5px
+	width auto
+	z-index 100000 /* Above WP toolbar. */

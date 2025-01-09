@@ -1,0 +1,195 @@
+
+// Page Header
+
+.page-header
+	{wrapper}
+	margin-top calc(var(--spacer-md) / 2)
+	margin-bottom var(--spacer-lg)
+	{transition-opacity}
+	text-align center
+	h1
+		margin 0
+		font-size var(--xl-font-size)
+		line-height var(--xl-line-height)
+		display inline-block
+
+#blog .page-header h1
+	transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+
+
+
+
+
+// Blog Layout
+
+html.is-loading
+	.blog-layout article
+	#blog .page-header h1
+		transform scale(1.05)
+		opacity 0
+
+.blog-items
+	{transition-opacity}
+	.title-link
+		text-decoration none
+
+.blog-layout
+	{wrapper}
+	padding-bottom calc(var(--spacer-lg) / 1.25)
+	margin-bottom calc(var(--spacer-md) / 2)
+	position relative
+	&::after
+		content ''
+		position absolute
+		left 0
+		right 0
+		bottom 0
+		height 2px
+		background-color var(--text-color)
+		border-radius 4px
+		opacity .25
+	article
+		margin-bottom calc(var(--spacer-lg) / 1.25)
+		transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+		&:last-child
+			margin-bottom 0
+		.image-wrapper
+			{box-shadow}
+			display block
+			overflow hidden
+			.featured-image
+				width 100%
+				transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+			&:hover .featured-image
+				transform scale(1.1)
+
+		.post-title-wrapper
+			{wrapper-narrow}
+			text-align center
+			width 100%
+			.post-title
+				text-overflow ellipsis
+				overflow hidden
+		.post-meta
+			margin-top 2rem
+		.subheading
+			font-size var(--h123-subheading)
+		.title-link
+			color var(--text-color)
+		.post-title
+			margin .75rem 0 0
+			{transition-opacity}
+			&:hover
+				opacity .7
+		p
+			margin 1rem 0 0
+		.button
+			margin 1.75rem 0 0
+
+		&.no-post-thumbnail
+			padding-top calc(var(--spacer-lg) / 1.25)
+			position relative
+			.post-meta
+				margin-top 0
+			&::after
+				content ''
+				position absolute
+				top 0
+				left 0
+				right 0
+				height 2px
+				background-color var(--text-color)
+				border-radius 4px
+				opacity .25
+
+		&.sticky
+			padding-bottom 2.5rem
+			background-color var(--secondary-bg)
+			.post-title-wrapper
+				max-width calc(var(--wrapper-narrow) + 4rem)
+				padding-left 2rem
+				padding-right 2rem
+			&.no-post-thumbnail
+				margin-bottom 0
+				padding-bottom calc(var(--spacer-lg) / 1.25)
+				&::after
+					top -2px
+				& + .has-post-thumbnail
+					padding-top calc(var(--spacer-lg) / 1.25)
+					position relative
+					&::before
+						content ''
+						position absolute
+						top 0
+						left 0
+						right 0
+						height 2px
+						background-color var(--text-color)
+						border-radius 4px
+						opacity .25
+
+
+
+// Search Results
+
+body.search-results .blog-items
+	.author
+	.category:empty
+		display none
+
+body.search-no-results
+	.page-header
+		{wrapper-narrow}
+	.is-style-info-box
+		{wrapper-narrow}
+		margin-top 0
+		margin-bottom 0
+
+
+
+
+
+// Pagination
+
+.pagination-wrapper
+	font-family var(--heading-font)
+	font-weight var(--heading-font-weight)
+	display flex
+	align-items center
+	justify-content center
+	{transition-opacity}
+	.pagination-title
+		font-size var(--h5-font-size)
+		line-height var(--h5-line-height)
+		margin-right 1rem
+	.page-numbers
+		display inline-block
+		width var(--button-size)
+		height var(--button-size)
+		border 3px solid var(--text-color)
+		border-radius 50%
+		box-sizing content-box
+		text-decoration none
+		vertical-align middle
+		text-align center
+		line-height var(--button-size)
+		margin 0 .25rem
+		color var(--text-color)
+		transition color .5s, background-color .4s, opacity .4s
+		&.dots
+			width auto
+			height auto
+			border none
+		&:not(.dots)
+			&:hover
+				background var(--text-color)
+				color var(--bg-color)
+			&:active
+				opacity .6
+		&.current
+			width calc(var(--button-size) / 2)
+			border none
+			opacity .5
+			&:hover
+				background none
+				color var(--text-color)

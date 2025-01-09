@@ -1,0 +1,617 @@
+/*!!
+Theme Name:    Sphere
+Description:   Creative Portfolio Theme
+Version:       1.0.4
+Theme URI:     http://acid7.studio/sphere
+Author:        Acid7
+Author URI:    acid7.studio
+Text Domain:   sphere
+License:       ThemeForest Standard License
+License URI:   https://themeforest.net/licenses/standard
+Tags:          custom-colors, custom-menu, editor-style, featured-images, theme-options, threaded-comments, rtl-language-support, translation-ready
+*/
+
+@font-face {
+	font-family: 'simple-line-icons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('fonts/simple-line-icons.eot');
+	src: url('fonts/simple-line-icons.eot#iefix') format('embedded-opentype'),
+		url('fonts/simple-line-icons.woff2') format('woff2'),
+		url('fonts/simple-line-icons.ttf') format('truetype'),
+		url('fonts/simple-line-icons.woff') format('woff'),
+		url('fonts/simple-line-icons.svg#simple-line-icons') format('svg');
+}
+
+@font-face {
+	font-family: 'theme-icons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('fonts/theme-icons.eot');
+	src: url('fonts/theme-icons.eot#iefix') format('embedded-opentype'),
+		url('fonts/theme-icons.woff2') format('woff2'),
+		url('fonts/theme-icons.woff') format('woff'),
+		url('fonts/theme-icons.ttf') format('truetype'),
+		url('fonts/theme-icons.svg#fontello') format('svg');
+}
+
+@import "inc/reset.styl"
+
+
+
+
+// Variables
+
+wrapper =
+	max-width var(--wrapper)
+	margin-left auto
+	margin-right auto
+
+wrapper-narrow =
+	max-width var(--wrapper-narrow)
+	margin-left auto
+	margin-right auto
+
+transition-color =
+	transition color .5s
+	will-change color
+
+transition-opacity =
+	transition opacity .5s
+
+scrollbar =
+	overflow-y scroll
+	scrollbar-width thin
+
+box-shadow =
+	box-shadow 0 0 50px 0 var(--box-shadow-color)
+
+// ------------------------------
+
+@media (min-width: 1921px)
+	:root
+		--vertical-rim 4.5rem
+		--horizontal-rim 6.5rem
+
+:root
+	--admin-bar 32px
+
+@media (max-width: 782px)
+	:root
+		--admin-bar 46px
+
+// ------------------------------
+
+
+
+
+// Body
+
+html
+	height 100%
+	scrollbar-width thin
+body
+	height 100%
+	min-height 100.3%
+	font-family var(--body-font)
+	color var(--text-color)
+	background-color var(--bg-color)
+	transition background-color 1s
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	-webkit-text-size-adjust none
+	will-change background-color
+	display flex
+
+
+
+
+// Preloader
+
+#preloader-container
+	z-index 1
+	position fixed
+	top 0
+	left 0
+	right 0
+	bottom 0
+	display flex
+	flex-flow column
+	align-items center
+	justify-content center
+	opacity 0
+	transition opacity .5s ease
+
+#preloader
+	font-family var(--subheading-font)
+	font-weight var(--subheading-font-weight)
+	text-transform var(--subheading-transform)
+	letter-spacing var(--subheading-spacing)
+	font-size var(--xxl-subheading)
+	text-align center
+	transition color .5s, opacity .5s
+	transition-delay .5s, .5s
+	.indicator
+		min-width calc(var(--xxl-font-size) * 1.333)
+		margin-left -1.25rem
+		margin-right -1.25rem
+		width calc(100% + 2.5rem)
+
+		margin-top .5rem
+		position relative
+		span
+			display block
+			background-color var(--text-color)
+			border-radius 5px
+			height 4px
+			width 0
+			transition width .25s, background-color .5s
+			transition-delay 0s, .5s
+			&::before
+				content ''
+				position absolute
+				left 0
+				right 0
+				top 50%
+				height 2px
+				margin-top -1px
+				border-radius 3px
+				background-color var(--text-color)
+				transition background-color .5s
+				transition-delay .5s
+				opacity .3
+
+// Loading Opacity
+
+html.init-loading
+	header
+	footer
+		opacity 0
+
+html.init-loading
+html.is-loading
+	#content
+	body.menu-opened #main-menu
+		opacity 0
+	#preloader-container
+		opacity 1
+
+
+
+
+// Header
+
+body.admin-bar header
+	margin-top calc(var(--vertical-rim) + var(--admin-bar))
+
+@media (max-width: 600px)
+	body.admin-bar.scrolled header
+		margin-top var(--vertical-rim)
+
+header
+	z-index 3
+	position fixed
+	left 0
+	right 0
+	top 0
+	display flex
+	align-items center
+	justify-content space-between
+	white-space nowrap
+	pointer-events none
+	margin var(--vertical-rim) var(--horizontal-rim) 0
+	transition opacity .7s, transform .5s, margin .5s
+	.custom-logo-link
+		z-index 1
+		position relative
+		display inline-block
+	.custom-logo
+		display inline-block
+		vertical-align middle
+		pointer-events auto
+		{transition-opacity}
+	svg.custom-logo *
+		fill var(--text-color)
+
+	.site-title
+		z-index 1
+		position relative
+		text-decoration none
+		pointer-events auto
+		max-width calc(100% - 38px - var(--horizontal-rim))
+		transition opacity .5s, color .5s
+		&:hover
+			color currentColor
+		h1, p
+			overflow hidden
+			white-space nowrap
+			text-overflow ellipsis
+		h1
+			margin 0
+			font-size var(--h4-font-size)
+			line-height 1.2
+			span
+				background-image linear-gradient(to right, var(--secondary-color) 0%, var(--secondary-color) 100%);
+				background-repeat repeat-x
+				background-position 0 .86em
+				background-size 100% .175em
+		p
+			margin 0
+			font-family var(--subheading-font)
+			font-weight var(--subheading-font-weight)
+			text-transform var(--subheading-transform)
+			letter-spacing var(--subheading-spacing)
+			font-size var(--xs-subheading)
+
+body:not(.fullscreen-menu) header nav
+	margin-left calc(var(--spacer-md) / 2)
+
+// Main Menu
+
+html.is-loading
+	#main-menu .menu-item a::after
+		opacity 0
+
+#main-menu
+	position relative
+	display inline-block
+	pointer-events auto
+	font-family var(--buttons-font)
+	font-weight var(--buttons-font-weight)
+	{transition-opacity}
+	.menu-item
+		position relative
+		display inline-block
+		vertical-align middle
+		will-change transform, opacity
+		a
+			display inline-block
+			line-height 1.1875
+			padding 1rem 0
+			margin 0 calc(var(--spacer-md) / 2)
+			text-transform uppercase
+			text-decoration none
+			position relative
+			&::after
+				content ''
+				position absolute
+				left 0
+				right 0
+				bottom .5rem
+				height .25rem
+				background-color var(--secondary-color)
+				opacity 0
+				{transition-opacity}
+		&.current-menu-item
+		&.current-menu-parent
+			a::after
+				opacity 1
+		&:last-child a
+			margin-right 0
+		&:hover > a
+			color var(--secondary-color)
+
+	.menu-item-has-children
+		position relative
+		.sub-menu
+			position absolute
+			white-space nowrap
+			margin-left calc(var(--spacer-md) / 2 - 2rem)
+			padding 1rem 0
+			background-color var(--bg-color)
+			transition background-color .5s
+			{box-shadow}
+			.menu-item
+				display block
+				a
+					padding .5rem 2rem
+					margin 0
+					text-transform none
+					&::after
+						display none
+				&.current-menu-item
+				&.current-menu-parent
+					& > a
+						color var(--secondary-color)
+			.sub-menu
+				top -1rem
+				left 100%
+				margin-left -1rem
+
+// Menu Scrolled
+
+body:not(.fullscreen-menu).scrolled
+	#main-menu
+		opacity 0
+		pointer-events none
+
+
+
+
+// Sub Menu FX
+
+body:not(.fullscreen-menu)
+	#main-menu > .menu-item-has-children > .sub-menu
+		overflow hidden
+	#main-menu > .menu-item-has-children:hover > .sub-menu
+		overflow visible
+	#main-menu .menu-item-has-children
+		& > .sub-menu
+			opacity 0.001 // Safari fix
+			pointer-events none
+			transform scaleY(1.1)
+			transform-origin center top
+			transition opacity .7s, background-color .5s, transform .5s
+			.menu-item
+				opacity 0
+				transform translateY(1rem)
+				transition opacity .4s, transform .4s
+				transition-delay 0s
+		&:hover > .sub-menu
+			opacity 1
+			transform scaleY(1)
+			pointer-events auto
+			.menu-item
+				opacity 1
+				transform translateY(0)
+				delay = 0.08
+				for num in (1..15)
+					&:nth-child({num})
+						transition-delay (delay)s
+					delay = delay + 0.08
+				& > .sub-menu .menu-item
+					opacity 0
+					transform translateY(1rem)
+				&.menu-item-has-children:hover .sub-menu .menu-item
+					opacity 1
+					transform translateY(0)
+					& > .sub-menu .menu-item
+						opacity 0
+						transform translateY(1rem)
+					&.menu-item-has-children:hover .sub-menu .menu-item
+						opacity 1
+						transform translateY(0)
+
+
+
+
+// Fullscreen Menu
+
+body.fullscreen-menu
+	#menu-opener
+		display block
+		pointer-events auto
+	header
+		white-space normal
+	header nav
+		position fixed
+		pointer-events auto
+		top 0
+		left 0
+		right 0
+		bottom 0
+		display none
+		align-items center
+		justify-content center
+		-webkit-overflow-scrolling touch
+		{scrollbar}
+	#main-menu
+		display block
+		text-align center
+		padding calc(var(--vertical-rim) * 2 + 2rem) var(--horizontal-rim)
+		margin auto
+		.menu-item
+			display block
+			a
+				display block
+				font-weight var(--heading-font-weight)
+				font-size var(--h2-font-size)
+				line-height var(--h2-line-height)
+				padding .5rem 0
+				margin 0
+				&::after
+					display none
+		.menu-item-has-children
+			.sub-menu
+				box-shadow none
+				position static
+				height 0
+				opacity 0
+				overflow hidden
+				margin 0
+				padding 0
+				transition height .5s cubic-bezier(0.13, 0.28, 0, 0.91), opacity .5s cubic-bezier(0.13, 0.28, 0, 0.91)
+				transition-delay 0s, 0s
+				&::before
+					display none
+				.menu-item a
+					padding .5rem 0
+					font-family var(--subheading-font)
+					font-weight var(--subheading-font-weight)
+					font-size var(--h123-subheading)
+					line-height 1.7
+				.sub-menu
+					height auto
+					overflow visible
+			&.submenu-toggled
+				.sub-menu
+					opacity 1
+					transition height .4s, opacity 0s
+					transition-delay 0s, .4s
+	&.menu-opened
+		header nav
+			display flex
+		#content
+			opacity 0
+		footer
+			opacity 1
+			pointer-events auto
+
+		&.hide-footer
+			.custom-logo
+			.site-title
+				opacity 0
+				pointer-events none
+
+// Fullscreen Menu Scrolled
+
+html:not(.is-loading) body.fullscreen-menu
+	header::before
+		content ''
+		z-index -1
+		position absolute
+		top calc(var(--vertical-rim) / -1)
+		left calc(var(--horizontal-rim) / -1)
+		right calc(var(--horizontal-rim) / -1)
+		bottom calc(var(--vertical-rim) / -3)
+		background-color var(--bg-color)
+		padding calc(var(--vertical-rim) / 3) calc(var(--horizontal-rim) / 1)
+		border-bottom 1px solid var(--box-shadow-color)
+		{transition-opacity}
+		{box-shadow}
+		opacity 0
+	&.scrolled:not(.menu-opened)
+		header
+			pointer-events auto
+			transform translateY(calc(var(--vertical-rim) / -1.5))
+			&::before
+				opacity 1
+
+
+
+
+
+// Content
+
+#content
+	z-index 2
+	width 100%
+	margin auto
+	{transition-opacity}
+
+
+
+
+
+// Footer
+
+footer
+	z-index 3
+	position fixed
+	left 0
+	right 0
+	bottom 0
+	display flex
+	justify-content space-between
+	align-items center
+	margin 0 var(--horizontal-rim) var(--vertical-rim)
+	pointer-events none
+	white-space nowrap
+	{transition-opacity}
+	opacity 0
+
+body.at-the-bottom footer
+	opacity 1
+	#audio
+	.footer-text
+	#footer-menu
+		pointer-events auto
+
+html.is-loading footer
+body.single:not(.menu-opened) footer
+	opacity 0
+	#audio
+	.footer-text
+	#footer-menu
+		pointer-events none
+
+#audio
+	font-family 'theme-icons'
+	font-size 1.5rem
+	{transition-color}
+	&:hover
+		cursor pointer
+		color var(--secondary-color)
+	&::before
+		content '\e805'
+	&.sound-off
+		&::before
+			content '\e803'
+		&::after
+			display inline-block
+			vertical-align middle
+			content attr(data-sound-off)
+			font-family var(--buttons-font)
+			font-weight var(--buttons-font-weight)
+			font-size .875rem
+			margin-left .5rem
+			margin-top -3px
+
+//
+
+.footer-text
+	font-family var(--buttons-font)
+	font-weight var(--buttons-font-weight)
+	font-size .875rem
+	{transition-color}
+	a
+		text-decoration none
+		opacity .6
+		transition opacity .4s, color .5s
+		&:hover
+			opacity 1
+
+//
+
+#footer-menu
+	font-family var(--buttons-font)
+	font-weight var(--buttons-font-weight)
+	font-size .9375rem
+	margin-left auto
+	.menu-item
+		display inline-block
+		vertical-align middle
+		a
+			display inline-block
+			text-decoration none
+			padding .5rem calc(var(--spacer-sm) / 2)
+			{transition-color}
+		&:last-child a
+			padding-right 0
+
+body.hide-footer footer
+	opacity 0 !important
+	#audio
+	.footer-text
+	#footer-menu
+		pointer-events none !important
+
+
+
+
+
+// Plugins
+
+@import "inc/flickity.css"
+
+// Styles
+
+@import "2-content.styl"
+@import "3-typography.styl"
+
+@import "6-plugins.styl"
+
+@import "7-portfolio.styl"
+@import "8-portfolio-single.styl"
+
+@import "9-blog.styl"
+@import "10-blog-single.styl"
+
+@import "11-forms.styl"
+@import "12-widgets.styl"
+
+// Responsive
+
+@import "77-responsive-content.styl"
+@import "77-responsive-components.styl"
+@import "77-responsive-layouts.styl"

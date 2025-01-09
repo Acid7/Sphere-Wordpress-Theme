@@ -1,0 +1,450 @@
+
+// --------------------------
+// Editor Styles Overrides
+// -------------------------
+
+@font-face {
+	font-family: 'simple-line-icons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/simple-line-icons.eot');
+	src: url('../fonts/simple-line-icons.eot#iefix') format('embedded-opentype'),
+		url('../fonts/simple-line-icons.woff2') format('woff2'),
+		url('../fonts/simple-line-icons.ttf') format('truetype'),
+		url('../fonts/simple-line-icons.woff') format('woff'),
+		url('../fonts/simple-line-icons.svg#simple-line-icons') format('svg');
+}
+
+@font-face {
+	font-family: 'theme-icons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/theme-icons.eot');
+	src: url('../fonts/theme-icons.eot#iefix') format('embedded-opentype'),
+		url('../fonts/theme-icons.woff2') format('woff2'),
+		url('../fonts/theme-icons.woff') format('woff'),
+		url('../fonts/theme-icons.ttf') format('truetype'),
+		url('../fonts/theme-icons.svg#fontello') format('svg');
+}
+
+//
+
+wp-blue = #007acc
+bg-color = rgba(0, 122, 204, .1)
+border-color = #d1d1d1
+text-color = #1a1a1a
+
+::selection
+	background-color #AECFF4
+
+
+
+// Editor Body
+
+body
+	font-family var(--body-font)
+	color #1a1a1a
+	vertical-align baseline
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	font-size var(--body-font-size)
+
+
+
+
+// Post Title
+
+.editor-post-title__block
+	margin-top 3rem
+	margin-bottom 4rem
+	.editor-post-title__input
+		font-family var(--heading-font)
+		font-weight var(--heading-font-weight)
+		font-size var(--xl-font-size)
+		line-height var(--xl-line-height)
+		text-align center
+
+
+
+
+// Portfolio Archives
+
+.wp-block
+	.portfolio-items
+		display flex
+		flex-wrap nowrap
+		min-height 25rem
+		&:empty
+			background-color bg-color
+		article
+			display none
+			pointer-events none
+			a
+				color currentColor
+				box-shadow none
+			img
+				display block
+			.post-title
+				text-decoration none
+				text-shadow 0 0 50px rgba(255,255,255,1)
+			.subheading
+				font-family var(--subheading-font)
+				font-weight var(--subheading-font-weight)
+				text-transform var(--subheading-transform)
+				letter-spacing var(--subheading-spacing)
+			.view-project
+				display none
+
+	.portfolio-slideshow
+		article
+			width 100%
+			&:nth-child(1)
+				display block
+			.post-title-wrapper
+				position absolute
+				top 50%
+				left 10%
+				right 10%
+				transform translateY(-50%)
+			.image-wrapper
+				width 50%
+				margin-left auto
+			.post-title
+				font-size var(--h1-font-size)
+				line-height var(--h1-line-height)
+				margin 1.25rem 0 0
+			.subheading
+				font-size var(--h123-subheading)
+			.post-category
+				display inline-block
+				margin 1.5rem 0 0
+				font-size calc(var(--body-font-size) * 1.333)
+				line-height 1.75
+
+	.portfolio-carousel
+		align-items center
+		justify-content space-between
+		article
+			width 32%
+			margin 0 2%
+			&:nth-child(-n+3)
+				display block
+			time
+				display inline-block
+				margin-bottom .75rem
+			.post-title
+				font-size var(--h5-font-size)
+				line-height var(--h5-line-height)
+				margin .75rem 0 -.25rem
+			.subheading
+				font-size var(--h456-subheading)
+
+	.portfolio-titles
+		flex-wrap wrap
+		article
+			width 100%
+			text-align center
+			&:nth-child(-n+5)
+				display block
+				margin-bottom 3rem
+			&:nth-child(5)
+				margin-bottom 0
+			time
+			.image-wrapper
+				display none
+			.post-title
+				font-size var(--h1-font-size)
+				line-height var(--h1-line-height)
+				margin .5rem 0 0
+			.subheading
+				font-size var(--h123-subheading)
+
+	.portfolio-film
+		overflow hidden
+		align-items center
+		justify-content space-between
+		article
+			width 50%
+			margin-top 3rem
+			position relative
+			&:nth-child(-n+3)
+				display block
+			.post-title-wrapper
+				position absolute
+				top 50%
+				left -10%
+				transform translateY(-50%)
+			time
+				position absolute
+				top -2.25rem
+				right 0
+				font-family var(--subheading-font)
+				font-weight var(--subheading-font-weight)
+				text-transform var(--subheading-transform)
+				letter-spacing var(--subheading-spacing)
+				font-size var(--h456-subheading)
+			.post-title
+				font-size var(--h3-font-size)
+				line-height var(--h3-line-height)
+				margin .5rem 0 .25rem
+			.subheading
+				font-size var(--h123-subheading)
+			&:nth-child(1)
+				margin-left -40%
+			&:nth-child(3)
+				margin-right -40%
+
+
+
+
+// Typography
+
+.wp-block-image figcaption
+	margin-top .75rem
+
+.wp-block-columns .wp-block-image
+	margin 0 auto
+
+h1
+h2
+h3
+h4
+h5
+h6
+	strong
+		color wp-blue
+	&.is-style-underlined
+	&.is-style-underlined-xl
+		text-decoration underline
+
+.wp-block[data-align="wide"] > // Headings + Blocks
+.wp-block[data-align="full"] >
+	h1, h2, h3, h4, h5, h6
+		margin-bottom calc(var(--spacer-lg) * -1 + 2.5rem)
+
+.wp-block >
+	h1, h2, h3, h4, h5, h6 // First childs (columns)
+		&:first-child
+			margin-top 0
+
+p
+	line-height var(--body-line-height)
+
+p.has-drop-cap:not(:focus)::first-letter
+	background-color bg-color
+	border 1px solid currentColor
+
+.is-style-info-box
+	background-color bg-color
+	border-left .5rem solid currentColor
+
+strong
+	color wp-blue
+a
+	box-shadow 0 1px 0 0 currentColor
+	color wp-blue
+	text-decoration none
+
+ol li::before
+	color wp-blue !important
+ul li::before
+	background-color wp-blue !important
+pre
+	background-color bg-color
+	border 1px solid border-color
+code
+	border-radius 5px
+	padding 0 8px
+	margin 1px 2px
+	border 1px solid border-color
+	background-color bg-color
+
+table
+	tr
+		border-top 2px solid currentColor
+	tr:last-child
+		border-bottom 2px solid currentColor
+	strong
+		color currentColor
+.wp-block-table
+	&.is-style-stripes
+		thead tr
+		tbody tr:nth-of-type(2n)
+			background-color bg-color
+
+.wp-block-separator
+	opacity 1
+	background-color currentColor
+	&.has-background:not(.is-style-dots)
+		height 2px
+	&.is-style-dots:before
+		color inherit
+		white-space nowrap
+
+
+
+
+// Blockquotes
+
+.wp-block-quote
+.wp-block-pullquote
+.wp-block-quote.is-style-large
+	border none
+	color currentColor
+	&::before
+		z-index 1
+		background linear-gradient(90deg, rgba(0,122,204,0.5) 0%, rgba(0,122,204,0) 100%)
+	p
+		z-index 1
+		padding-bottom 3rem
+
+.wp-block-quote .wp-block-quote__citation
+.wp-block-quote.is-style-large .wp-block-quote__citation
+.wp-block-pullquote__citation
+	font-family var(--heading-font)
+	font-weight var(--heading-font-weight)
+	font-size .875rem
+	line-height 1.25rem
+	text-transform uppercase
+	font-style normal
+	color currentColor
+	text-align right
+
+// Testimonials Slider
+
+.wp-block .testimonials-slider
+	min-height 10rem
+	&:empty
+		background linear-gradient(90deg, rgba(0,122,204,0.5) 0%, rgba(0,122,204,0) 100%)
+	.testimonials-item
+		display none
+		&:first-child
+			display block
+		blockquote
+			margin 0
+		cite
+			color currentColor
+			display flex
+			align-items center
+			margin-bottom -1.5em
+			&::before
+				content none
+		.testimonials-image
+			width 3.5rem
+			height 3.5rem
+			border-radius 50%
+			margin-right 1rem
+			margin-bottom -.5em
+			& + .testimonials-author
+				margin-bottom -.5em
+
+
+
+
+// Buttons
+
+.wp-block-button
+	.wp-block-button__link
+		border 3px solid text-color
+		color text-color
+		background none !important
+		&:hover
+			color text-color
+			background none
+	&.is-style-fill
+		.wp-block-button__link
+			background-color text-color !important
+			border-color text-color
+			color white
+
+.wp-block[data-align=left]
+.wp-block[data-align=right]
+	height auto
+	.wp-block-buttons
+	.wp-block-button
+		float none
+
+
+
+
+// Cover
+
+.wp-block-cover
+	h1, h2, h3, h4, h5, h6
+		margin-bottom 0
+
+.wp-block[data-align=left]
+.wp-block[data-align=right]
+	.wp-block-cover
+		max-width inherit
+		margin-left 0
+		margin-right 0
+		float none
+
+
+
+
+// Counter
+
+.wp-block-a7x-counter
+	flex-wrap nowrap
+	textarea
+		text-align center
+	.counter-number
+		margin-bottom -.25rem
+
+
+
+// Socials
+
+.wp-block[data-align=left]
+.wp-block[data-align=right]
+	.wp-block-social-links
+		margin-left 0
+		margin-right 0
+		float none
+.wp-block[data-align=right]
+	.wp-block-social-links
+		justify-content flex-end
+
+
+
+// Gallery
+
+.wp-block-gallery
+	&.alignright
+	&.alignleft
+		max-width inherit
+		float none
+
+
+
+
+// Audio - Video
+
+.wp-audio-shortcode
+.wp-playlist
+	a
+		box-shadow none
+.mce-content-body
+	.wp-audio-playlist
+		margin 0
+		padding-bottom 0
+	.wp-playlist-tracks
+		margin-top 0
+	.wp-playlist-item
+		padding 10px 0
+	.wp-playlist-item-length
+		top 10px
+
+
+
+
+// Layout Fixes
+
+div[data-type="core/spacer"]
+	margin-bottom 0
+	.block-library-spacer__resize-container
+		margin-bottom 0
+	& + *
+		margin-top 0

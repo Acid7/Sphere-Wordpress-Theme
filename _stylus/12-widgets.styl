@@ -1,0 +1,372 @@
+
+// Widgets Opener
+
+#widgets-opener
+	margin-left auto
+	margin-right auto
+	margin-top calc(var(--spacer-sm) / 2)
+	width var(--button-size)
+	height var(--button-size)
+	border 3px solid var(--text-color)
+	border-radius 50%
+	box-sizing content-box
+	display flex
+	align-items center
+	justify-content center
+	flex-shrink 0
+	transition background-color .4s, opacity .4s
+	&::before
+		font-family 'theme-icons'
+		content '\e800'
+		font-size calc(var(--h5-font-size) * 1.166)
+		line-height calc(var(--h5-font-size) * 1.166)
+		margin-bottom -2px
+		margin-right -1px
+		{transition-color}
+	&:hover
+		cursor pointer
+		background-color var(--text-color)
+		&::before
+			color var(--bg-color)
+	&:active
+		opacity .6
+
+#widgets-close
+	z-index 1
+	position fixed
+	top calc(var(--vertical-rim) + calc(var(--header-height) / 2))
+	right calc(var(--spacer-lg) / 2)
+	margin-right var(--scrollbar-gap)
+	&::before
+	&::after
+		background-color var(--sidebar-text)
+	&:hover
+		&::before
+		&::after
+			background-color var(--secondary-color)
+
+
+
+
+// Blog Widgets
+
+#blog-widgets
+	z-index 4
+	position fixed
+	top 0
+	left 0
+	right 0
+	bottom 0
+	opacity 0
+	width 0
+	overflow hidden
+	transition width .5s step-end, opacity .5s
+	.widgets-wrapper
+		position fixed
+		top 0
+		right 0
+		bottom 0
+		padding var(--spacer-lg) calc(var(--spacer-lg) / 2) var(--vertical-rim)
+		transform translateX(100%)
+		transition transform 1s cubic-bezier(0.16, 1, 0.3, 1)
+		-webkit-overflow-scrolling touch
+		background-color var(--sidebar-bg)
+		color var(--sidebar-text)
+		{box-shadow}
+	.widget
+		max-width 280px
+		margin calc(var(--spacer-md) / 2) 0 var(--spacer-md)
+		&:last-child
+			margin-bottom calc(var(--spacer-md) / 2)
+		h5
+			margin-top 0
+			padding-bottom .5rem
+			font-size calc(var(--body-font-size) * 1.333)
+			border-bottom 3px solid var(--sidebar-text)
+		ul
+			margin 0
+			padding 0
+			list-style-type none
+			ul
+				margin-left 1.5rem
+		li
+			line-height 1.5
+			color var(--sidebar-text-rgb)
+			& > a
+				font-size var(--h5-font-size)
+			span
+				display inline-block
+				font-family var(--subheading-font)
+				font-weight var(--subheading-font-weight)
+				text-transform var(--subheading-transform)
+				letter-spacing var(--subheading-spacing)
+				font-size var(--xs-subheading)
+				opacity .6
+		a
+			display inline-block
+			font-family var(--heading-font)
+			font-weight var(--heading-font-weight)
+			margin-right .1rem
+			text-decoration none
+			&:hover
+				color var(--sidebar-text)
+
+		.styled-select::after
+			font-size var(--h5-font-size)
+		select
+			border-width 3px
+
+// Widgets Opened
+
+body.widgets-opened
+	header
+	.page-header
+	.blog-items
+	.pagination-wrapper
+		z-index 1
+		opacity .5
+	#widgets-close
+		opacity 1
+		pointer-events auto
+	#blog-widgets
+		opacity 1
+		width 100%
+		transition width .5s step-start, opacity .5s
+		.widgets-wrapper
+			{scrollbar}
+			transform translateX(0)
+
+
+
+
+
+// Search
+
+.widget_search
+	input
+		font-size var(--h5-font-size)
+		line-height var(--h5-line-height)
+		padding-left 0
+		padding-right 0
+		border none
+	#search-form
+		opacity .6
+		position relative
+		&::before
+			content ''
+			display inline-block
+			position absolute
+			left 0
+			bottom 0
+			right 0
+			height 3px
+			border-radius 3px
+			background-color var(--sidebar-text)
+		&::after
+			position absolute
+			top 50%
+			right .2rem
+			transform translateY(-50%)
+			font-family 'theme-icons'
+			content '\e801'
+			font-size var(--h5-font-size)
+			pointer-events none
+	button
+		display none
+
+// Categories
+
+.widget_categories
+	.current-cat a
+		color var(--sidebar-text)
+
+// Recent Posts
+
+.widget_recent_entries li
+	span
+		margin-top .3rem
+	&:not(:last-child) span
+		margin-bottom 1.35rem
+
+// Recent Comments
+
+.widget_recent_comments
+	li:first-child span
+		margin-top 0
+	li span
+		margin-top 1.35rem
+		margin-bottom .25rem
+	span a
+		font-weight var(--subheading-font-weight) !important
+
+// Calendar
+
+.widget_calendar
+	#calendar_wrap
+		overflow-x auto
+	#wp-calendar
+		text-align center
+		border-collapse separate
+		border-spacing 2px
+		font-size var(--body-font-size)
+		color var(--sidebar-text-rgb)
+		caption
+		thead
+			padding-bottom .5rem
+		th
+		td
+			font-family var(--body-font)
+			font-size var(--body-font-size)
+			padding .45rem .5rem
+		td
+			border 1px solid var(--sidebar-text-rgb)
+			border-radius 2px
+			transition color .5s, background-color .5s
+			a
+				display inline-block
+				color var(--sidebar-text)
+				font-family var(--body-font)
+				margin -.45rem -.5rem
+				padding .45rem .5rem
+				&:hover
+					color var(--sidebar-bg)
+			&.pad
+				border none
+			&:not(.pad):hover
+				color var(--sidebar-bg)
+				background var(--sidebar-text)
+
+	.wp-calendar-nav
+		margin-top 1rem
+		display flex
+		justify-content space-between
+		a
+			color var(--sidebar-text-rgb)
+			&:hover
+				color var(--secondary-color)
+
+// Text
+
+.widget_text p
+	&:first-child
+		margin-top 0
+	&:last-child
+		margin-bottom 0
+	&:empty
+		display none
+	&.wp-caption-text
+		margin-top .25rem !important
+
+// Gallery
+
+.widget_media_gallery
+	.gallery-columns-1
+		.gallery-item
+			margin-bottom .5rem
+
+// Tags
+
+.widget_tag_cloud a
+	font-family var(--buttons-font)
+	font-weight var(--buttons-font-weight)
+	font-size var(--xs-font-size) !important
+	text-transform uppercase
+	display inline-block
+	padding .5rem 1rem
+	border 2px solid var(--sidebar-text)
+	border-radius 50px
+	margin-bottom 1em
+	transition color .5s, background-color .5s, opacity .5s
+	opacity .65
+	&:hover
+		opacity 1
+		color var(--sidebar-bg) !important
+		background-color var(--sidebar-text)
+	&:not(:last-child)
+		margin-right .5em
+
+// RSS
+
+.widget_rss li
+	span
+		margin-bottom .3rem
+	&:not(:last-child)
+		margin-bottom 1.35rem
+
+
+
+
+
+// -----------------
+// Block Widgets
+// ---------------
+
+.wp-block-archives-list
+.wp-block-archives-dropdown
+.wp-block-calendar
+.wp-block-categories
+.wp-block-latest-comments
+.wp-block-latest-posts
+.wp-block-search
+.wp-block-tag-cloud
+.wp-block-rss
+	margin-top var(--spacer-sm) !important
+	margin-bottom var(--spacer-sm) !important
+
+// Calendar
+
+.wp-block-calendar
+	caption
+		margin-bottom 1rem
+	.wp-calendar-nav
+		margin-top 1rem
+		display flex
+		justify-content space-between
+
+// Comments
+
+.wp-block-latest-comments
+	footer
+		display block
+		position relative
+		top auto
+		left auto
+		right auto
+		bottom auto
+		margin 0
+		pointer-events auto
+		white-space normal
+		opacity 1 !important
+
+// Search
+
+.wp-block-search
+	.wp-block-search__input
+		border 4px solid currentColor
+		border-radius 4px
+	.wp-block-search__button
+		margin-top 2px
+		margin-bottom 2px
+
+// Tags
+
+.wp-block-tag-cloud a
+	display inline-block
+	text-decoration none
+	font-family var(--buttons-font)
+	font-weight var(--heading-font-weight)
+	font-size var(--xs-font-size) !important
+	text-transform uppercase
+	line-height 1.5
+	padding .5rem 1rem
+	border-radius 50px
+	margin-bottom .5rem
+	border 3px solid var(--text-color)
+	opacity .5
+	transition color .5s, opacity .5s, background-color .5s
+	&:hover
+		opacity 1
+		color var(--bg-color)
+		background-color var(--text-color)
+	&:not(:last-child)
+		margin-right .5rem

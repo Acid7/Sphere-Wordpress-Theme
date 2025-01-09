@@ -1,0 +1,231 @@
+
+// -----------
+// Spacing
+// ---------
+
+@media (max-width: 1536px)
+	:root
+		--vertical-rim 3rem
+		--horizontal-rim 4.5rem
+
+		--spacer-xl 10rem
+		--spacer-lg 7.5rem
+		--spacer-md 5rem
+		--spacer-sm 2.5rem
+
+
+@media (max-width: 1366px)
+	:root
+		--horizontal-rim 4rem
+
+
+@media (max-width: 1280px)
+	:root
+		--vertical-rim 2.5rem
+		--horizontal-rim 3.5rem
+		--button-size 2.85rem
+
+		--spacer-xl 9.5rem
+		--spacer-lg 6rem
+		--spacer-md 4.5rem
+
+
+@media (max-width: 1112px)
+	:root
+		--wrapper-narrow 1024px
+
+
+@media (max-width: 768px)
+	:root
+		--vertical-rim 2.25rem
+		--horizontal-rim 3rem
+
+
+@media (max-width: 640px)
+	:root
+		--vertical-rim 1.5rem
+		--horizontal-rim 2rem
+		--button-size 2.5rem
+
+		--spacer-xl 8.5rem
+		--spacer-lg 5rem
+		--spacer-md 3.5rem
+		--spacer-sm 2rem
+
+
+@media (max-width: 480px)
+	:root
+		--horizontal-rim 1.5rem
+
+
+
+
+// Image Header Page Template
+
+@media (max-width: 1920px)
+	body.page-template-with-image-header
+		.image-wrapper
+			height auto
+
+@media (max-width: 1112px)
+	body.page-template-with-image-header
+		.image-wrapper
+			height calc(100vh - var(--horizontal-rim) - calc(var(--vertical-rim) * 2 + var(--header-height)))
+
+
+
+
+
+
+// --------------
+// Typography
+// ------------
+
+@media (max-width: 1536px)
+
+	.post-title-wrapper.size-xl
+		.post-title
+			font-size var(--h1-font-size)
+			line-height var(--h1-line-height)
+		.subheading
+			font-size var(--h123-subheading)
+
+	.page-header h1
+	.is-style-underlined-xl
+		font-size calc(var(--h1-font-size) * 1.166)
+		line-height calc(var(--h1-line-height) * 1.166)
+	h1
+		font-size calc(var(--h2-font-size) * 1.166)
+		line-height calc(var(--h2-line-height) * 1.166)
+	h2
+		font-size calc(var(--h3-font-size) * 1.166)
+		line-height calc(var(--h3-line-height) * 1.166)
+	h3
+		font-size calc(var(--h4-font-size) * 1.166)
+		line-height calc(var(--h4-line-height) * 1.166)
+	h4
+		font-size calc(var(--h5-font-size) * 1.166)
+		line-height calc(var(--h5-line-height) * 1.166)
+	h5
+		font-size calc(var(--h6-font-size) * 1.166)
+		line-height calc(var(--h6-line-height) * 1.166)
+
+	h1, h2, h3, h4, h5, h6
+		small
+			margin-bottom 1.25rem
+			line-height 1.35
+
+	.is-style-excerpt-big
+		font-size var(--h3-font-size)
+		line-height var(--h3-line-height)
+
+
+
+
+@media (max-width: 1112px)
+
+	.post-title-wrapper.size-xl
+		.post-title
+			font-size calc(var(--h2-font-size) * 1.166)
+			line-height calc(var(--h2-line-height) * 1.166)
+
+	.page-header h1
+	.is-style-underlined-xl
+		font-size var(--h1-font-size)
+		line-height var(--h1-line-height)
+		small
+			font-size var(--h123-subheading)
+
+	h1, h2, h3
+		small
+			font-size var(--h456-subheading)
+	h4, h5, h6
+		small
+			font-size var(--xs-subheading)
+
+	.wp-block-columns .wp-block-column
+		h4, h5, h6
+			small
+				margin-bottom .75rem
+
+	h1
+		font-size var(--h2-font-size)
+		line-height var(--h2-line-height)
+	h2
+		font-size var(--h3-font-size)
+		line-height var(--h3-line-height)
+	h3
+		font-size var(--h4-font-size)
+		line-height var(--h4-line-height)
+
+	.is-style-excerpt-big
+		margin-top 1.75rem
+		margin-bottom 1.75rem
+		font-size calc(var(--body-font-size) * 1.333 * 1.333)
+
+	.is-style-excerpt
+		font-size calc(var(--body-font-size) * 1.166)
+
+	blockquote
+	.wp-block-quote
+	.wp-block-pullquote
+	.wp-block-quote.is-style-large
+		&::before
+			left 1rem
+		p
+			padding 2.5rem 1.5rem 2.75rem 4.25rem
+			font-size calc(var(--body-font-size) * 1.166)
+			&::before
+				font-size var(--xl-font-size)
+				line-height var(--xl-font-size)
+				left 0rem
+			&::after
+				left 2.25rem
+		cite
+			font-size .75rem
+			small
+				font-size .75rem
+				line-height 1.25
+
+	table
+		line-height 1.4
+		font-size calc(var(--body-font-size) * 1.166)
+		strong
+			font-size calc(var(--h6-font-size) * 1.166)
+
+
+
+
+@media (max-width: 640px)
+
+	h1, h2, h3, h4, h5, h6
+		-ms-word-wrap break-word
+		word-wrap break-word
+		hyphens auto
+
+	.post-title-wrapper.size-xl
+		.post-title
+			font-size var(--h3-font-size)
+			line-height var(--h3-line-height)
+		.subheading
+			font-size var(--h456-subheading)
+
+	.page-header h1
+	.is-style-underlined-xl
+		font-size var(--h2-font-size)
+		line-height var(--h2-line-height)
+	h1
+		font-size var(--h3-font-size)
+		line-height var(--h3-line-height)
+	h2
+		font-size var(--h4-font-size)
+		line-height var(--h4-line-height)
+	h3
+		font-size calc(var(--h5-font-size) * 1.166)
+		line-height calc(var(--h5-line-height) * 1.166)
+
+	.is-style-excerpt-big
+		font-size var(--h4-font-size)
+		line-height var(--h4-line-height)
+		margin-top 1.5rem
+		margin-bottom 1.5rem

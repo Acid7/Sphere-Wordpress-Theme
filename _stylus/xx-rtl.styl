@@ -1,0 +1,399 @@
+
+body
+	direction rtl
+	unicode-bidi embed
+
+// -------------------
+// Header & Footer
+// -----------------
+
+body:not(.fullscreen-menu) header nav
+	margin-left 0
+	margin-right calc(var(--spacer-md) / 2)
+
+#main-menu
+	.menu-item:last-child a
+		margin-right calc(var(--spacer-md) / 2)
+		margin-left 0
+	.menu-item-has-children
+		.sub-menu
+			margin-right .75rem
+			margin-left 0
+
+#footer-menu
+	margin-right auto
+	margin-left 0
+	.menu-item:last-child a
+		padding-right calc(var(--spacer-sm) / 2)
+		padding-left 0
+
+#audio.sound-off::after
+	margin-right .5rem
+	margin-left 0
+
+#menu-opener
+	margin-right auto
+	margin-left 0
+
+#back-to-top
+	left 0
+	right auto
+
+
+
+
+// -------------
+// Portfolio
+// -----------
+
+.portfolio-items .title-link
+.view-project-wrapper
+	margin-left auto
+	margin-right 0
+.view-project-wrapper .view-project
+	left auto
+	right 0
+
+.flickity-rtl
+	button.flickity-prev-next-button.previous
+		right var(--horizontal-rim)
+		&::before
+			content '\f006'
+			margin-right 0
+			margin-left 0.15em
+
+	button.flickity-prev-next-button.next
+		left var(--horizontal-rim)
+		margin-left var(--scrollbar-gap)
+		margin-right 0
+		&::before
+			content '\f007'
+			margin-left 0
+			margin-right 0.15em
+
+// Slideshow
+
+.portfolio-slideshow article
+	&.is-previous .post-title-wrapper
+		transform translateX(5%)
+	&.is-next .post-title-wrapper
+		transform translateX(-5%)
+	.image-wrapper
+		left calc(var(--horizontal-rim) * 2 + var(--button-size))
+		right 50%
+	.post-title-wrapper
+		text-align right
+	.post-title
+		margin var(--spacer-sm) 0 0
+
+@media (max-width: 768px)
+	.portfolio-slideshow article
+		.image-wrapper
+			left 0
+			right 0
+		.post-title-wrapper
+			text-align center
+		.view-project-wrapper .view-project
+			left 0
+
+@media (max-width: 320px)
+	.portfolio-slideshow
+		button.flickity-prev-next-button
+			&.previous
+				left auto
+				right calc(var(--horizontal-rim) / 2)
+			&.next
+				right auto
+				left calc(var(--horizontal-rim) / 2)
+
+// Titles
+
+.portfolio-titles
+	article
+		.post-year
+			left auto
+			right -1rem
+			transform translateX(125%)
+		&:hover .post-year
+			transform translateX(100%)
+
+// Film
+
+.portfolio-film.flickity-rtl
+	.flickity-prev-next-button
+		&.previous
+		&.next
+			margin-left 0
+			margin-right calc(var(--scrollbar-gap) / -2)
+			left auto
+		&.previous
+			right calc(50% - calc(var(--xxl-font-size) / 2) - var(--button-size) - 6px - 4rem)
+		&.next
+			right calc(50% + calc(var(--xxl-font-size) / 2 + 4rem))
+
+.portfolio-film article
+	&.is-previous
+		.post-year
+			transform translateX(50%)
+		.post-title-wrapper
+			transform translateX(20%) translateY(-50%)
+	&.is-next
+		.post-year
+			transform translateX(-50%)
+		.post-title-wrapper
+			transform translateX(-20%) translateY(-50%)
+	.post-year
+		right auto
+		left 0
+	.post-title-wrapper
+		left auto
+		right calc(0rem - var(--spacer-md))
+	.view-project-wrapper
+		left auto
+		right 0
+
+@media (max-width: 768px)
+	.portfolio-film article
+		&.is-previous
+			.post-year
+			.post-title-wrapper
+				transform translateX(2.5rem)
+		&.is-next
+			.post-year
+			.post-title-wrapper
+				transform translateX(-2.5rem)
+		.post-year
+			right 0
+		.post-title-wrapper
+			right auto
+
+
+
+
+// --------------------
+// Portfolio Single
+// ------------------
+
+.portfolio-item-intro
+	.portfolio-item-fields
+		div
+			display flex
+		span
+			margin-right 0
+			margin-left .5rem
+
+@media (max-width: 768px)
+	.portfolio-item-intro
+		.portfolio-item-fields div
+			justify-content center
+
+
+
+
+// --------
+// Blog
+// ------
+
+// Widgets
+
+#widgets-close
+	left calc(var(--spacer-lg) / 2)
+	right auto
+	margin-right 0
+	margin-left var(--scrollbar-gap)
+
+#blog-widgets
+	.widgets-wrapper
+		left 0
+		right auto
+		transform translateX(-100%)
+
+.widget_search
+	#search-form::after
+		left .2rem
+		right auto
+
+// Post Bottom
+
+.post-bottom .tags
+	margin-right 0
+	margin-left 1rem
+	.tags-title
+		margin-right 0
+		margin-left .5rem
+	a:not(:last-child)
+		margin-right 0
+		margin-left .5rem
+
+// Comments
+
+#comments-opener
+	padding-right 0
+	padding-left 1.6rem
+	&::after
+		right auto
+		left 0
+
+#comments .comment
+	.comment-header
+		.avatar
+			margin-left 1.5rem
+			margin-right 0
+	&[class*="depth-"]:not(.depth-1)
+		margin-right 6.5rem
+		margin-left 0
+
+.comments-wrapper // Reply
+	#respond
+		margin-left 0
+		margin-right 6.5rem
+
+#respond
+	#cancel-comment-reply-link::before
+		margin-right 0
+		margin-left .5rem
+
+@media (max-width: 640px)
+	#comments .comment
+		.comment-header .avatar
+			margin-left 1rem
+		.comment-content
+			margin-left 0
+			margin-right 5rem
+		&[class*="depth-"]:not(.depth-1)
+			margin-right 0
+
+	.comments-wrapper // Reply
+		#respond
+			margin-right 0
+
+
+
+
+// --------------
+// Components
+// ------------
+
+// Columns
+
+.wp-block-columns .wp-block-column:not(:first-child)
+	margin-left 0
+	margin-right var(--spacer-md)
+
+@media (max-width: 834px)
+	.entry-content > .wp-block-columns > .wp-block-column:not(:first-child)
+		margin-right 0
+
+@media (max-width: 640px)
+	.wp-block-columns .wp-block-column:not(:first-child)
+		margin-right 0
+
+// Testimonials Slider
+
+.testimonials-slider .testimonials-item .testimonials-image
+	margin-right 0
+	margin-left 1rem
+
+@media (max-width: 640px)
+	.testimonials-slider .flickity-page-dots
+		text-align right
+		padding-right 1rem
+		padding-left 0
+
+
+
+
+// --------------
+// Typography
+// ------------
+
+p.has-drop-cap:not(:focus)::first-letter
+	float right
+	margin-right 0
+	margin-left .15em
+
+.entry-content ol
+	padding-left 0
+	padding-right 1.25rem
+	& > li
+		padding-left 0
+		padding-right 1.25rem
+		&::before
+			left auto
+			right 0
+
+// Infobox
+
+.is-style-info-box
+	border-left 0
+	border-right .5rem solid var(--text-color)
+	padding-left 2rem
+	padding-right 5.5rem
+	&::before
+		left auto
+		right 2rem
+
+// Blockquote
+
+blockquote
+.wp-block-quote
+.wp-block-pullquote
+.wp-block-quote.is-style-large
+	&::before
+		right 1.5rem
+		left calc(50% - 1.5rem)
+		background var(--blockquote-bg-rtl)
+	p
+		padding-left 1.5rem
+		padding-right 5.5rem
+		&::before
+			left auto
+			right 0
+		&::after
+			left 50%
+			right 2.75rem
+	cite
+		right auto
+		left 0
+		text-align left
+		&::before
+			margin-right 0
+			margin-left .5rem
+		small
+			text-align right
+
+@media (max-width: 1112px)
+
+	blockquote
+	.wp-block-quote
+	.wp-block-pullquote
+	.wp-block-quote.is-style-large
+		&::before
+			right 1rem
+		p
+			padding 2.5rem 4.25rem 2.75rem 1.5rem
+			&::before
+				right 0
+			&::after
+				right 2.25rem
+
+
+
+
+// Font Pairs
+
+body.exo2-opensans
+	blockquote
+	.wp-block-quote
+	.wp-block-pullquote
+	.wp-block-quote.is-style-large
+		p::before
+			right .5rem
+
+body.orbitron-raleway
+	blockquote
+	.wp-block-quote
+	.wp-block-pullquote
+	.wp-block-quote.is-style-large
+		p::before
+			right .25rem

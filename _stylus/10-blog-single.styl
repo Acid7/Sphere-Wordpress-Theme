@@ -1,0 +1,383 @@
+
+// Post Header
+
+.post-header
+	{wrapper}
+	margin-top calc(var(--spacer-md) / 2)
+	margin-bottom var(--spacer-lg)
+	transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+	.post-title-wrapper
+		width 100%
+		text-align center
+	.post-title
+		margin-top 1.5rem
+		text-overflow ellipsis
+		overflow hidden
+
+html.is-loading
+	.post-header
+	.single-post .image-wrapper
+		transform scale(1.05)
+		opacity 0
+
+
+
+
+// Content
+
+body.single-post .post-content
+	padding-bottom var(--spacer-lg)
+
+
+
+
+// Featured Image
+
+body.single-post .image-wrapper
+	{wrapper}
+	{box-shadow}
+	margin-bottom var(--spacer-md)
+	transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+	.featured-image
+		width 100%
+
+// Attachment Image
+
+body.attachment
+	.entry-content img
+		margin-left auto
+		margin-right auto
+		{box-shadow}
+
+
+
+
+
+// Password Protected
+
+.post-password-form
+	{wrapper-narrow}
+	text-align center
+	input
+		display block
+		width auto
+		margin-left auto
+		margin-right auto
+	input[type="password"]
+		text-align left
+		width 100%
+		max-width 310px
+	input[type="submit"]
+	p:last-child
+		margin-bottom 0 !important
+
+
+
+
+// Post Pages
+
+.post-pages
+	{wrapper-narrow}
+	clear both
+	width 100%
+	text-align center
+	font-family var(--heading-font)
+	font-weight var(--heading-font-weight)
+	margin-top var(--spacer-sm)
+	margin-bottom var(--spacer-sm)
+	.post-page-numbers
+		padding .5rem .25rem
+		&.current
+			opacity .5
+		&:first-child
+			margin-left .5rem
+
+
+
+
+// Post Bottom
+
+.post-bottom
+	clear both
+	{wrapper-narrow}
+	display flex
+	flex-wrap wrap
+	align-items center
+	justify-content space-between
+	margin-top var(--spacer-sm)
+	padding-top 1rem
+	margin-bottom -.5rem
+	position relative
+	&::before
+		content ''
+		position absolute
+		top 0
+		left 0
+		right 0
+		height 2px
+		background-color var(--text-color)
+		border-radius 4px
+		opacity .25
+	.tags
+		margin 1rem 1rem 0 0
+		.tags-title
+			display inline-block
+			font-family var(--heading-font)
+			font-weight var(--heading-font-weight)
+			font-size var(--h6-font-size)
+			line-height var(--h6-line-height)
+			margin-right .5rem
+		a
+			display inline-block
+			text-decoration none
+			font-family var(--buttons-font)
+			font-weight var(--heading-font-weight)
+			font-size var(--xs-font-size)
+			text-transform uppercase
+			padding .5rem 1rem
+			border-radius 50px
+			margin-bottom .5rem
+			border 3px solid var(--text-color)
+			opacity .5
+			transition color .5s, opacity .5s, background-color .5s
+			&:hover
+				opacity 1
+				color var(--bg-color)
+				background-color var(--text-color)
+			&:not(:last-child)
+				margin-right .5rem
+
+#comments-opener
+	font-family var(--heading-font)
+	font-weight var(--heading-font-weight)
+	font-size var(--h5-font-size)
+	line-height var(--h5-line-height)
+	margin 1rem 0 .5rem
+	white-space nowrap
+	padding-right 1.6rem
+	position relative
+	{transition-color}
+	&:hover
+		cursor pointer
+		color var(--secondary-color)
+	&::after
+		position absolute
+		right 0
+		font-family 'theme-icons'
+		content '\f004'
+		transition transform .4s
+	&.opened::after
+		transform rotate(-180deg)
+
+
+
+
+
+// Comments
+
+#comments
+	clear both
+	{wrapper-narrow}
+	position relative
+	-ms-word-wrap break-word
+	word-wrap break-word
+	h3
+		font-size var(--h3-font-size)
+		line-height var(--h3-line-height)
+		margin-top var(--spacer-lg)
+		margin-bottom 2.5rem
+	p
+		margin-top .5rem
+		margin-bottom 1.25rem
+		font-size 1rem
+
+	.comment
+		will-change transform, opacity
+		margin-bottom calc(var(--spacer-sm) - .5rem)
+		&.bypostauthor
+			position relative
+
+		.comment-header
+			display flex
+			flex-wrap nowrap
+			align-items center
+			a
+				text-decoration none
+				&:hover
+					color var(--secondary-color)
+			.avatar
+				border-radius 50%
+				margin-right 1.5rem
+			.comment-meta
+				time
+					font-family var(--subheading-font)
+					font-weight var(--subheading-font-weight)
+					text-transform var(--subheading-transform)
+					font-size var(--h456-subheading)
+					color var(--post-meta-color)
+					span
+						margin-right .25rem
+				.author
+					margin-top .25rem
+					font-family var(--heading-font)
+					font-weight var(--heading-font-weight)
+					font-size var(--h5-font-size)
+					line-height var(--h5-line-height)
+
+		.comment-content
+			margin-left 6.5rem
+			padding-bottom calc(var(--spacer-sm) - .5rem)
+			position relative
+			p:last-child
+				margin-bottom 0
+			&::after
+				position absolute
+				content ''
+				left 0
+				right 0
+				bottom 0
+				height 1px
+				background-color var(--text-color)
+				opacity .25
+			.comment-reply-link
+				display inline-block
+				font-family var(--buttons-font)
+				font-weight var(--heading-font-weight)
+				text-transform uppercase
+				text-decoration none
+				margin-top .25rem
+				&::after
+					font-family 'theme-icons'
+					content '\f112'
+					margin-left 1rem
+				&:hover
+					color var(--secondary-color)
+
+		&[class*="depth-"]:not(.depth-1)
+			margin-left 6.5rem
+
+	// Comments Navigation
+
+	.comment-navigation
+		.nav-links
+			text-align center
+			.nav-previous
+			.nav-next
+				display inline-block
+				margin 0 1rem
+
+	.is-style-info-box
+		margin-top var(--spacer-md)
+		margin-bottom 0
+
+
+// Respond
+
+.comments-wrapper // Reply
+	#respond
+		margin-top var(--spacer-sm)
+		margin-bottom var(--spacer-sm)
+		margin-left 6.5rem
+//
+
+#respond
+	padding 3rem 3.5rem
+	margin var(--spacer-md) auto 0
+	background-color var(--secondary-bg)
+	&:first-child
+		margin-top var(--spacer-lg)
+	h4
+		font-size var(--h4-font-size)
+		line-height var(--h4-line-height)
+		margin-top 0
+		display flex
+		flex-wrap wrap
+		align-items center
+		justify-content space-between
+		small
+			margin .5rem 0
+			letter-spacing 0
+			font-weight var(--heading-font-weight)
+			&::before
+				display none
+	a
+		transition opacity .4s
+		&:hover
+			opacity .4
+			color currentColor
+
+	#cancel-comment-reply-link
+		display block
+		font-size var(--h6-font-size)
+		text-decoration none
+		&::before
+			display inline-block
+			margin-right .5rem
+			font-family 'theme-icons'
+			content: '\e802'
+			text-decoration none
+
+	.logged-in-as
+		font-family var(--buttons-font)
+		font-weight var(--heading-font-weight)
+		a
+			text-transform uppercase
+			text-decoration none
+			&:not(:first-child)
+				margin-left .5rem
+
+	input
+	textarea
+	input[type='submit']
+	input[type="checkbox"] + label
+		font-size 1rem
+	input[type='submit']
+		margin-bottom 0 !important
+		width auto
+
+	// Inputs
+	.comment-form-comment
+	.comment-form-author
+	.comment-form-email
+	.comment-form-url
+		margin 2rem 0 0
+		label
+			display none
+
+	// Checkbox
+	.comment-form-comment
+	.comment-form-cookies-consent
+		margin 2rem 0 0
+
+	// Button
+	.form-submit
+		margin 0
+
+
+
+
+
+// Comments Toggle
+
+#comments
+	height 0
+	opacity 0
+	overflow hidden
+	transition height .8s
+	.comment-navigation
+	.is-style-info-box
+		opacity 0
+		transition-delay 0
+		{transition-opacity}
+	.comment-navigation a
+		position relative
+		{button-small}
+		{button-style}
+	&.opened
+		.comment-navigation
+		.is-style-info-box
+			opacity 1
+			transition-delay 3s
+
+body.page #comments
+	opacity 1

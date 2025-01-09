@@ -1,0 +1,185 @@
+
+// -------------------
+// Fullscreen Menu
+// -----------------
+
+@media (max-width: 640px)
+	body.fullscreen-menu
+		#main-menu
+			padding calc(var(--vertical-rim) * 4) var(--horizontal-rim)
+			.menu-item a
+				font-size var(--h3-font-size)
+				line-height var(--h3-line-height)
+				padding .4rem 0
+
+	// Scrolled Header Height
+
+	html:not(.is-loading) body.fullscreen-menu
+		header::before
+			bottom calc(var(--vertical-rim) / -2)
+			padding-top calc(var(--vertical-rim) / 2)
+			padding-bottom calc(var(--vertical-rim) / 2)
+		&.scrolled:not(.menu-opened)
+			header
+				transform translateY(calc(var(--vertical-rim) / -2))
+
+
+
+
+
+// -----------------
+// UI Components
+// ---------------
+
+@media (max-width: 1112px)
+	#audio.sound-off::after
+		font-size .8125rem
+
+	#flickity-progress
+		.current-slide
+		.total-slides
+			width 3.75rem
+
+	#widgets-opener::before
+		font-size var(--h5-font-size)
+		line-height var(--h5-font-size)
+
+@media (max-width: 640px)
+	.button
+	form button
+	form input[type="button"]
+	form input[type="submit"]
+	.wp-block-button .wp-block-button__link
+	#comments .comment-navigation a
+		padding .85rem 1.5rem
+
+
+
+
+// ----------------------
+// Content Components
+// --------------------
+
+@media (max-width: 1112px)
+	.testimonials-slider .testimonials-item
+		.testimonials-image + .testimonials-author
+			margin-bottom -.75em
+
+	.share-article
+		.share-title
+		.share-links
+			font-size var(--xl-subheading)
+
+@media (max-width: 640px)
+	.testimonials-slider
+		.flickity-page-dots
+			text-align left
+			padding-left 1rem
+			bottom -1.9rem
+
+	.wp-block-group.has-background
+		.wp-block-group__inner-container
+			padding 2.5rem 1.5rem
+
+	.share-article .share-links
+		width 100vw
+		white-space normal
+
+
+
+// -----------
+// Contact
+// ---------
+
+@media (max-width: 768px)
+	span.wpcf7-not-valid-tip
+		padding-left 0
+
+@media (max-width: 640px)
+	div.wpcf7
+		margin-top 2.5rem
+		.wpcf7-form-control-wrap
+			&:not(:first-child)
+				margin-top 2rem
+		button
+			margin-top 2rem !important
+
+	.form-columns
+		flex-wrap wrap
+		div
+			width 100%
+			margin-bottom 2rem
+
+
+
+// -----------
+// Columns
+// ---------
+
+@media (max-width: 834px)
+	.entry-content > .wp-block-columns
+		flex-wrap wrap
+		justify-content center
+		& > .wp-block-column
+			flex-basis 100% !important
+			&:not(:first-child)
+				margin-left 0
+			&:not(:last-child)
+				margin-bottom var(--spacer-md)
+			&:empty
+				display none
+
+@media (max-width: 640px)
+	.wp-block-columns
+		flex-wrap wrap
+		justify-content center
+		.wp-block-column
+			flex-basis 100% !important
+			&:not(:first-child)
+				margin-left 0
+			&:not(:last-child)
+				margin-bottom var(--spacer-md)
+
+
+
+// -----------
+// Counter
+// ---------
+
+@media (max-width: 1536px)
+	.wp-block-a7x-counter
+		.counter-number
+			font-size calc(var(--h2-font-size) * 1.166)
+			line-height calc(var(--h2-line-height) * 1.166)
+
+@media (max-width: 1112px)
+	.wp-block-a7x-counter
+		.counter-number
+			font-size var(--h2-font-size)
+			line-height var(--h2-line-height)
+		.counter-text
+			font-size var(--h456-subheading)
+
+@media (max-width: 640px)
+	.wp-block-a7x-counter
+		.counter-number
+			font-size var(--h3-font-size)
+			line-height var(--h3-line-height)
+
+
+
+
+// -----------
+// Widgets
+// ---------
+
+@media (max-width: 480px)
+	#blog-widgets .widgets-wrapper
+		padding-left 1.75rem
+		padding-right 1.75rem
+	#widgets-close
+		right 1.5rem
+
+@media (max-width: 414px)
+	#blog-widgets .widget
+		max-width initial

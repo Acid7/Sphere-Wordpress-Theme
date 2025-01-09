@@ -1,0 +1,621 @@
+// Icon share '\ebc1'
+
+// Variables for components.styl & gutenberg.styl
+
+wrapper =
+	max-width var(--wrapper)
+	margin-left auto
+	margin-right auto
+
+wrapper-narrow =
+	max-width var(--wrapper-narrow)
+	margin-left auto
+	margin-right auto
+
+
+
+
+// --------------
+// Typography
+// -------------
+
+::selection
+	background-color var(--secondary-color)
+
+.aligncenter
+	clear both
+	display block
+	margin 1.5rem auto
+
+// Images
+
+img
+	border 0
+	height auto
+	max-width 100%
+
+.wp-block-image
+	position relative
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	img
+		{box-shadow}
+	.alignleft
+		margin 1rem 2rem 1rem 0
+	.alignright
+		margin 1rem 0 1rem 2rem
+	&.is-style-rounded
+		border-radius 50%
+
+// Parallax Images
+
+.is-style-parallax
+	overflow hidden
+	{box-shadow}
+	img
+		box-shadow none
+		will-change transform
+	figcaption
+		display none
+
+// Captions
+
+figure
+	max-width 100%
+figure figcaption
+.wp-caption-text
+	text-align center
+	font-style italic
+	font-size .95rem !important
+	margin 1.5rem 0 0 !important
+	letter-spacing .25px !important
+
+// Old Images Markup
+
+img.alignleft
+	float left
+	margin 1rem 2rem 1rem 0
+img.alignright
+	float right
+	margin 1rem 0 1rem 2rem
+
+figure.wp-caption
+	&:not(.alignleft):not(.alignright)
+		margin-top var(--spacer-md)
+		margin-bottom var(--spacer-md)
+	&.alignleft
+		margin-top 1rem
+		margin-left calc(0.5 * (100vw -  min(calc(100vw - 8 *  25px), var(--wrapper-narrow))) - var(--horizontal-rim))
+		margin-right 2rem
+		margin-bottom 1rem
+		float left
+	&.alignright
+		margin-top 1rem
+		margin-left 2rem
+		margin-right calc(0.5 * (100vw -  min(calc(100vw - 8 *  25px), var(--wrapper-narrow))) - var(--horizontal-rim))
+		margin-bottom 1rem
+		float right
+
+@media (max-width: 1112px)
+	figure.wp-caption.alignleft
+		margin-left 0
+	figure.wp-caption.alignright
+		margin-right 0
+
+
+
+
+
+// Headings
+
+h1
+h2
+h3
+h4
+h5
+h6
+	clear both
+	margin-top var(--spacer-md)
+	font-family var(--heading-font)
+	font-weight var(--heading-font-weight)
+	margin-bottom 1.5rem
+	small
+		display table
+		font-family var(--subheading-font)
+		font-weight var(--subheading-font-weight)
+		text-transform var(--subheading-transform)
+		letter-spacing var(--subheading-spacing)
+		margin-bottom 1.5rem
+		line-height 1.3
+		position relative
+		padding-left .25rem
+		z-index 1
+		&::before
+			content ''
+			position absolute
+			left 0
+			right 0
+			top 0
+			bottom 0
+			background-color var(--secondary-bg)
+			z-index -1
+		strong
+			margin-left -4px
+			&::before
+				content ''
+				position absolute
+				left 0
+				right 0
+				top 0
+				bottom 0
+				background-color var(--bg-color)
+				z-index -1
+	&.has-text-align-center small
+		margin-left auto
+		margin-right auto
+	&.has-text-align-right small
+		margin-left auto
+
+	strong
+		font-weight inherit
+		color var(--secondary-color)
+	a:hover
+		color var(--secondary-color)
+
+	&.is-style-underlined
+	&.is-style-underlined-xl
+		& > span
+			background-image linear-gradient(to right, var(--secondary-color) 0%, var(--secondary-color) 100%)
+			background-repeat repeat-x
+			background-position 0 .86em
+			background-size 100% .175em
+		strong
+			text-shadow 0 0 .42em var(--text-shadow-color)
+			transform translateZ(0)
+
+	&.alignwide
+		max-width var(--wrapper)
+	&.alignfull
+		max-width initial
+
+	&[class*="icon-"]::before
+		display block
+		margin 0 0 1.5rem
+		font-size 1.333em
+
+// Margins after headings
+
+h1, h2, h3, h4, h5, h6
+	& +
+		hr
+		blockquote
+		.wp-block-quote
+		.is-style-info-box
+		.wp-block-table
+			margin-top calc(var(--spacer-sm) / 2)
+
+		.wp-block-embed
+		.wp-block-cover
+		.wp-block-gallery
+			margin-top calc(var(--spacer-sm) - 1rem) !important
+		.wp-block-columns
+			margin-top var(--spacer-sm) !important
+
+// Headings inside group
+
+.wp-block-group
+	h1, h2, h3, h4, h5, h6
+		& +
+			h1, h2, h3, h4, h5, h6
+				margin-top calc(var(--spacer-md) / 2)
+
+// Subheadings inside column
+
+.wp-block-columns .wp-block-column
+	h1, h2, h3
+		small
+			margin-top .75rem
+	h4, h5, h6
+		small
+			margin-top .5rem
+			margin-bottom 1rem
+		& +
+			h4, h5, h6
+				margin-top calc(var(--spacer-md) / 2)
+
+// Heading Sizes
+
+.is-style-underlined-xl
+	font-size var(--xl-font-size)
+	line-height var(--xl-line-height)
+	small
+		font-size var(--xl-subheading)
+
+h1, h2, h3
+	small
+		font-size var(--h123-subheading)
+h4, h5, h6
+	small
+		font-size var(--h456-subheading)
+
+h1
+	font-size var(--h1-font-size)
+	line-height var(--h1-line-height)
+h2
+	font-size var(--h2-font-size)
+	line-height var(--h2-line-height)
+h3
+	font-size var(--h3-font-size)
+	line-height var(--h3-line-height)
+h4
+	font-size var(--h4-font-size)
+	line-height var(--h4-line-height)
+h5
+	font-size var(--h5-font-size)
+	line-height var(--h5-line-height)
+h6
+	font-size var(--h6-font-size)
+	line-height var(--h6-line-height)
+
+
+
+
+
+// Excerpt
+
+.is-style-excerpt
+	font-size calc(var(--body-font-size) * 1.333)
+	line-height 1.75
+	margin calc(var(--spacer-sm) + .5rem) auto
+	&.has-drop-cap:not(:focus)::first-letter
+		margin-top .075em
+		font-size 3em
+
+.is-style-excerpt-big
+	font-size calc(var(--body-font-size) * 1.333 * 1.333 * 1.333)
+	line-height 1.5
+	max-width var(--wrapper) !important
+	margin var(--spacer-sm) auto
+
+// Paragraphs
+
+p
+	font-size var(--body-font-size)
+	line-height var(--body-line-height)
+	margin 1.5rem auto
+	a[target="_blank"]::after
+		display inline-block
+		vertical-align top
+		margin -.1875rem .125rem 0 .1875rem
+		font-family 'theme-icons'
+		content '\e813'
+		speak none
+		font-style normal
+		font-weight normal
+		font-variant normal
+		text-transform none
+	&.has-drop-cap:not(:focus)
+		&::first-letter
+			float left
+			font-family var(--heading-font)
+			font-weight var(--heading-font-weight)
+			font-style normal
+			font-size 3.25em
+			margin .1em .15em 0 0
+			padding .175em
+			border 1px solid currentColor
+			background-color var(--secondary-bg)
+		&::after
+			display none
+
+a
+	{transition-color}
+	color currentColor
+	&:hover
+		color var(--secondary-color)
+
+strong
+	font-weight 800
+
+
+// Info Box
+
+.is-style-info-box
+	line-height 1.9
+	margin var(--spacer-md) auto
+	border-left .5rem solid var(--text-color)
+	background-color var(--secondary-bg)
+	padding 1.5rem 2rem 1.5rem 5.5rem
+	position relative
+	&::before
+		font-family 'theme-icons'
+		content '\e804'
+		font-size var(--h2-font-size)
+		line-height var(--h2-font-size)
+		position absolute
+		left 2rem
+		top 50%
+		margin-top -.5em
+
+
+
+
+
+// Blockquotes
+
+.entry-content > blockquote
+	{wrapper-narrow}
+
+blockquote
+.wp-block-quote
+.wp-block-pullquote
+.wp-block-quote.is-style-large
+	clear both
+	padding 0
+	margin var(--spacer-md) auto
+	text-align inherit
+	position relative
+	&::before
+		content ''
+		position absolute
+		z-index -1
+		top 0
+		left 1.5rem
+		bottom 0
+		right calc(50% - 1.5rem)
+		background var(--blockquote-bg)
+	p
+		padding 3rem 1.5rem 3rem 5.5rem
+		font-size calc(var(--body-font-size) * 1.333)
+		line-height 1.7
+		font-style italic
+		letter-spacing .25px
+		margin 0
+		position relative
+		&::before
+			font-family var(--heading-font)
+			font-weight var(--heading-font-weight)
+			font-size var(--xxl-font-size)
+			line-height var(--xxl-font-size)
+			color var(--text-color)
+			font-style normal
+			content '“'
+			position absolute
+			top 1.25rem
+			left 0
+		&::after
+			z-index -1
+			position absolute
+			content ''
+			top 1.25rem
+			left 2.75rem
+			right 50%
+			bottom 1.25rem
+			background-color var(--bg-color)
+	cite
+		display block
+		position absolute
+		right 0
+		bottom 0
+		font-family var(--heading-font)
+		font-weight var(--heading-font-weight)
+		font-size .875rem
+		line-height 1.25rem
+		font-style normal
+		text-transform uppercase
+		text-align right
+		color var(--post-meta-color)
+		&::before
+			content '—'
+			margin-right .5rem
+		small
+			display block
+			font-size .875rem
+			font-family var(--body-font)
+			font-weight normal
+			text-transform none
+			text-align left
+
+.wp-block-pullquote.is-style-solid-color
+	background none
+	blockquote
+		max-width initial
+		p
+			font-size calc(var(--body-font-size) * 1.333)
+		cite
+			text-transform uppercase
+
+//
+
+pre
+	margin 1.5rem auto
+	font-family monospace, monospace
+	font-size var(--body-font-size)
+	line-height 1.75
+	border-radius .625rem
+	padding 1.25rem 1.75rem 1.5rem
+	overflow auto
+	white-space pre-wrap
+	word-wrap break-word
+	border 1px solid var(--text-color)
+	background-color var(--secondary-bg)
+
+code
+	font-family monospace, monospace
+	display inline-block
+	line-height 1.75
+	border-radius .3125rem
+	padding 0 .5rem
+	margin 0 .125rem
+	border 1px solid var(--text-color)
+	background-color var(--secondary-bg)
+
+kbd
+	font-family var(--body-font)
+	background-color #f7f7f7
+	border-radius .1875rem
+	color #000
+	font-size .8125em
+	font-weight 800
+	padding .25rem .5rem
+	margin 0 .25rem
+	border 1px solid #fff
+	white-space nowrap
+	box-shadow 0 3px 0 0 var(--secondary-color), inset 0 0 0 2px var(--secondary-color)
+
+abbr
+	text-decoration underline dotted
+	&[title]
+		cursor help
+ins
+	text-decoration underline
+mark
+	color var(--text-color)
+	padding .25rem .5rem
+	text-decoration none
+	background-color var(--secondary-bg)
+address
+	font-size var(--body-font-size)
+	line-height var(--body-line-height)
+
+
+
+
+// Lists
+
+.entry-content
+	ul
+	ol
+		font-size var(--body-font-size)
+		line-height var(--body-line-height)
+	ol
+		list-style none
+		counter-reset li
+		padding-left 1.25rem
+		li
+			position relative
+		& > li
+			counter-increment li
+			padding-left 1.25rem
+			&::before
+				position absolute
+				left 0
+				top 0
+				content counter(li)"."
+
+
+
+
+// Tables
+
+.responsive-table
+	overflow-x auto
+.entry-content table
+	min-width 480px
+
+table
+	width 100%
+	border-collapse collapse
+	font-size calc(var(--body-font-size) * 1.333)
+	line-height 1.5
+	thead
+	tfoot
+		text-align center
+	th
+	td
+		padding 1.2rem 1.5rem
+	tr
+		border-top 2px solid var(--text-color)
+	tr:last-child
+		border-bottom 2px solid var(--text-color)
+	th
+	strong
+		font-family var(--heading-font)
+		font-weight var(--heading-font-weight)
+		font-size var(--h5-font-size)
+
+.wp-block-table
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	&.is-style-regular
+		border-left 2px solid var(--text-color)
+		border-right 2px solid var(--text-color)
+		tr td:not(:last-child)
+			border-right 2px solid var(--text-color)
+	&.is-style-stripes
+		border-bottom 0
+		thead tr
+			background-color var(--secondary-bg)
+		tbody tr:nth-of-type(2n)
+			background-color var(--secondary-bg)
+		tbody tr:nth-of-type(odd)
+			background none
+
+
+
+
+
+// Horizontal Line
+
+hr
+	clear both
+	margin var(--spacer-md) auto
+	background-color var(--text-color)
+	border-radius 4px
+	border 0
+	height 2px
+
+
+
+
+// Font Pairs
+
+body.exo2-opensans
+	h1, h2, h3, h4, h5, h6
+		&.is-style-underlined
+		&.is-style-underlined-xl
+			& > span
+				background-position 0 .9em
+	blockquote
+	.wp-block-quote
+	.wp-block-pullquote
+	.wp-block-quote.is-style-large
+		p::before
+			left .5rem
+	.button
+	form button
+	form input[type="button"]
+	form input[type="submit"]
+	.wp-block-button .wp-block-button__link
+	#comments .comment-navigation a
+		line-height 1.185
+
+body.orbitron-raleway
+	h1, h2, h3, h4, h5, h6
+		&.is-style-underlined
+		&.is-style-underlined-xl
+			& > span
+				background-position 0 .9em
+	blockquote
+	.wp-block-quote
+	.wp-block-pullquote
+	.wp-block-quote.is-style-large
+		p::before
+			left .25rem
+
+body.poppins-opensans
+	h1, h2, h3, h4, h5, h6
+		&.is-style-underlined
+		&.is-style-underlined-xl
+			& > span
+				background-position 0 .94em
+
+
+
+
+
+@import "4-components.styl"
+
+@import "5-gutenberg.styl"
+
+@import "inc/icons.styl"

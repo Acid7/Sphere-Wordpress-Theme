@@ -1,0 +1,408 @@
+
+// -------------
+// Portfolio
+// -----------
+
+// Slideshow
+
+@media (max-width: 1920px)
+	.portfolio-slideshow article
+		.post-title-wrapper
+			{wrapper}
+
+@media (max-width: 1536px)
+	.portfolio-slideshow article
+		.post-title-wrapper
+			margin-left calc(var(--horizontal-rim) * 2 + var(--button-size))
+			margin-right calc(var(--horizontal-rim) * 2 + var(--button-size))
+		.post-title
+			font-size var(--xl-font-size)
+			line-height var(--xl-line-height)
+		.subheading
+			font-size var(--xl-subheading)
+
+@media (max-width: 1112px)
+	.portfolio-slideshow article
+		.post-title
+			margin-top 1.75rem
+			font-size var(--h1-font-size)
+			line-height var(--h1-line-height)
+		.subheading
+			font-size var(--h123-subheading)
+		.is-style-excerpt-big
+			padding-top 1.75rem
+
+@media (max-width: 768px)
+	body.admin-bar
+		.portfolio-slideshow .image-wrapper
+			top 0
+
+	.portfolio-slideshow article
+		.image-wrapper
+			top 0
+			left 0
+			right 0
+			bottom 0
+			opacity .75
+		.post-title-wrapper
+			text-align center
+		.title-link
+		.view-project-wrapper
+			margin-left 0
+			margin-right 0
+			width 100%
+		.view-project-wrapper .view-project
+			right 0
+
+	html.is-loading .portfolio-slideshow
+		article.is-selected
+			.post-title-wrapper
+				transform scale(1.1)
+
+@media (max-width: 640px)
+	.portfolio-slideshow article
+		.post-title
+			margin-top 1.5rem
+			font-size var(--h2-font-size)
+			line-height var(--h2-line-height)
+		.is-style-excerpt-big
+			padding-top 1.5rem
+
+@media (max-width: 375px)
+	.portfolio-slideshow
+		article
+			.post-title-wrapper
+				margin-left var(--horizontal-rim)
+				margin-right var(--horizontal-rim)
+		.flickity-prev-next-button
+			top auto
+			border none
+			bottom calc(var(--vertical-rim) - calc(var(--button-size) / 2) - 1px)
+
+@media (max-width: 320px)
+	.portfolio-slideshow
+		button.flickity-prev-next-button
+			&.previous
+				left calc(var(--horizontal-rim) / 2)
+			&.next
+				right calc(var(--horizontal-rim) / 2)
+
+
+
+
+// Carousel
+
+@media (max-width: 1920px)
+	.portfolio-carousel article
+		width calc((100% - calc(var(--spacer-md) * 2)) / 3)
+
+@media (max-width: 1112px)
+	.portfolio-carousel article
+		width calc((100% - var(--spacer-md)) / 2)
+		.post-year
+			margin-bottom .95rem
+		.image-wrapper img
+			max-height calc(var(--viewport-height) - calc(var(--vertical-rim) * 4) - var(--header-height) - var(--footer-height) - calc(var(--h456-subheading) * 2) - var(--h5-line-height) - 2rem) // Window height - rims, header & footer, text sizes
+		.post-title
+			margin .75rem 0 .35rem
+			font-size var(--h5-font-size)
+			line-height var(--h5-line-height)
+		.subheading
+			font-size var(--xs-subheading)
+
+@media (max-width: 768px)
+	.portfolio-carousel article
+		width 100%
+
+@media (max-width: 640px)
+	.portfolio-carousel
+		.flickity-button.previous
+			margin-left -.25rem
+		.flickity-button.next
+			margin-right -.25rem
+
+@media (max-width: 414px)
+	.portfolio-carousel
+		margin-left 0
+		margin-right 0
+		.flickity-viewport
+			left var(--horizontal-rim)
+			right var(--horizontal-rim)
+		.flickity-button
+			display none
+
+
+
+
+
+
+// Titles
+
+@media (max-width: 1112px)
+	.portfolio-titles article .post-title
+		margin-top .75rem
+
+
+
+// Film
+
+@media (max-width: 1920px)
+	.portfolio-film article
+		.post-year
+			font-size var(--h456-subheading)
+			top calc(0rem - 1em - 1.5rem)
+		.post-title
+			font-size var(--h1-font-size)
+			line-height var(--h1-line-height)
+		.subheading
+			font-size var(--h123-subheading)
+		.view-project-wrapper
+			bottom calc(-2rem - var(--h123-subheading))
+
+@media (max-width: 1536px)
+	.portfolio-film article
+		.post-title
+			font-size var(--h2-font-size)
+			line-height var(--h2-line-height)
+		.view-project-wrapper
+			bottom calc(-1.75rem - var(--h123-subheading))
+
+@media (max-width: 1112px)
+	.portfolio-film article
+		width 52%
+		margin 0 7.5%
+		.post-year
+			top calc(0rem - 1em - 1.5rem)
+		.post-title
+			font-size var(--h3-font-size)
+			line-height var(--h3-line-height)
+		.subheading
+			font-size var(--h456-subheading)
+		.view-project-wrapper
+			bottom calc(-1.5rem - var(--h456-subheading))
+
+@media (max-width: 768px)
+	.portfolio-film article
+		width 65%
+		margin 0 6.25%
+		&.is-previous
+			.post-year
+			.post-title-wrapper
+				transform translateX(-2.5rem)
+		&.is-next
+			.post-year
+			.post-title-wrapper
+				transform translateX(2.5rem)
+		.post-year
+			left 0
+			right 0
+			text-align center
+		.post-title-wrapper
+			position relative
+			top auto
+			left auto
+			transform none
+			margin-top 1em
+			text-align center
+		.title-link
+		.view-project-wrapper
+			width 100%
+		.view-project-wrapper
+			position relative
+			bottom auto
+			margin-top 1em
+			.view-project
+				right 0
+				left 0
+
+@media (max-width: 640px)
+	.portfolio-film .flickity-prev-next-button
+		&.previous
+		&.next
+			bottom calc(var(--vertical-rim) - calc(var(--button-size) / 2 + .3rem))
+
+	.portfolio-film article
+		width 100%
+		.post-year
+			font-size var(--xs-subheading)
+		.post-title
+			font-size var(--h4-font-size)
+			line-height var(--h4-line-height)
+
+@media (max-width: 375px)
+	.portfolio-film
+		.flickity-button
+			display none
+
+
+
+
+
+// --------------------
+// Portfolio Single
+// ------------------
+
+@media (max-width: 1536px)
+	.portfolio-item-intro
+		.post-title-wrapper .post-title
+			font-size var(--xl-font-size)
+			line-height var(--xl-line-height)
+		.portfolio-item-meta
+			font-size var(--xl-subheading)
+
+@media (max-width: 1112px)
+	.portfolio-item-intro
+		.post-title-wrapper .post-title
+			font-size calc(var(--h1-font-size) * 1.166)
+			line-height calc(var(--h1-line-height) * 1.166)
+		.portfolio-item-meta
+			font-size var(--h123-subheading)
+
+@media (max-width: 768px)
+	.portfolio-item-intro
+		flex-wrap wrap
+		justify-content center
+		height auto !important
+		min-height -webkit-fill-available
+		.post-title-wrapper
+			position relative
+			height auto !important
+			margin-top 20vh
+			align-self stretch
+			align-content flex-end
+			transform none !important
+			opacity 1 !important
+		.portfolio-item-meta
+			position relative
+			margin-top 1.5rem
+			align-self flex-end
+			justify-content center
+		.portfolio-item-fields
+			text-align center
+			width 100%
+		.portfolio-item-link
+			margin-bottom .5rem
+	#scroll-down
+		display none
+
+@media (max-width: 640px)
+	.portfolio-item-intro
+		.post-title-wrapper .post-title
+			font-size var(--h2-font-size)
+			line-height var(--h2-line-height)
+		.portfolio-item-meta
+			font-size var(--h456-subheading)
+		.portfolio-item-link
+			margin-top 1.5rem
+
+@media (max-width: 414px)
+	.portfolio-item-intro
+		min-height 100vh
+		height auto
+
+
+
+
+
+
+
+// ---------------
+// Blog Layout
+// -------------
+
+@media (max-width: 1536px)
+	.blog-layout article
+		.button
+			margin-top 1.5rem
+
+@media (max-width: 1112px)
+	.blog-layout article
+		.subheading
+			font-size var(--h456-subheading)
+
+@media (max-width: 640px)
+	.blog-layout article
+		.post-meta
+			margin-top 1.5rem
+		.post-title
+			line-height calc(var(--h4-line-height) - .25rem)
+		.button
+			margin-top 1.25rem
+		&.sticky .post-title-wrapper
+			max-width calc(var(--wrapper-narrow) + 3rem)
+			padding-left 1.5rem
+			padding-right 1.5rem
+
+@media (max-width: 375px)
+	.blog-layout article
+		.post-meta
+			margin-top 1.25rem
+		.post-title
+			margin-top .5rem
+		p
+			display none
+
+
+
+
+
+// ---------------
+// Blog Single
+// -------------
+
+@media (max-width: 1536px)
+	.post-header .post-title
+		margin-top 1.25rem
+
+@media (max-width: 1112px)
+	.post-header .post-title
+		margin-top 1rem
+
+
+
+
+
+// ---------------
+// Comments
+// -------------
+
+@media (max-width: 640px)
+	#comments-opener
+		font-size calc(var(--h6-font-size) * 1.166)
+		line-height calc(var(--h6-line-height) * 1.166)
+		&.opened::after
+			transform rotate(-180deg) translateY(1px)
+	#comments
+		h3
+			font-size var(--h4-font-size)
+			line-height var(--h4-line-height)
+		.comment
+			.comment-header
+				.avatar
+					margin-right 1rem
+					width 4rem
+				.comment-meta
+					time
+						font-size var(--xs-subheading)
+					.author
+						margin-top 0
+						font-size calc(var(--h6-font-size) * 1.166)
+						line-height calc(var(--h6-line-height) * 1.166)
+			.comment-content
+				margin-left 5rem
+				.comment-reply-link
+					font-size .9rem
+
+			&[class*="depth-"]:not(.depth-1)
+				margin-left 0
+
+	#respond
+		padding 2rem 2rem 2.5rem
+		h4
+			font-size calc(var(--h5-font-size) * 1.166)
+			line-height calc(var(--h5-line-height) * 1.166)
+			margin-bottom 1rem
+
+	.comments-wrapper // Reply
+		#respond
+			margin-left 0

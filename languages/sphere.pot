@@ -1,0 +1,289 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Sphere\n"
+"POT-Creation-Date: 2021-02-22 14:26+0100\n"
+"PO-Revision-Date: 2021-02-22 14:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: 404.php:5
+msgid "Oops!"
+msgstr ""
+
+#: 404.php:6
+msgid "That page can’t be found."
+msgstr ""
+
+#: blog.php:19
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: blog.php:25
+msgid "Latest Posts"
+msgstr ""
+
+#: blog.php:45
+msgid "No posts found..."
+msgstr ""
+
+#: blog.php:52 functions.php:328
+msgid "Pages:"
+msgstr ""
+
+#: comments.php:12
+msgid "Comments"
+msgstr ""
+
+#: comments.php:25
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:14
+msgid "Sound Off"
+msgstr ""
+
+#: functions.php:238
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:239
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:247
+msgid "Blog Widgets"
+msgstr ""
+
+#: functions.php:249
+msgid "Widgets in this area will be shown on blog page."
+msgstr ""
+
+#: functions.php:309
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:360
+msgid "Reply"
+msgstr ""
+
+#: functions.php:375
+msgid "Comment"
+msgstr ""
+
+#: functions.php:382
+msgid "Name"
+msgstr ""
+
+#: functions.php:383
+msgid "E-mail"
+msgstr ""
+
+#: functions.php:384
+msgid "Website"
+msgstr ""
+
+#: functions.php:427
+msgid "Image"
+msgstr ""
+
+#: functions.php:445
+msgid "No Image"
+msgstr ""
+
+#: functions.php:530
+msgid ""
+"If you wish to have the contact form imported as well, do not forget to "
+"install and activate Contact Form 7 plugin before importing."
+msgstr ""
+
+#: includes/customizer.php:94
+msgid "Merge SVG Logo"
+msgstr ""
+
+#: includes/customizer.php:106
+msgid "Main Settings"
+msgstr ""
+
+#: includes/customizer.php:119
+msgid "Fonts"
+msgstr ""
+
+#: includes/customizer.php:122
+msgid "Montserrat / Raleway"
+msgstr ""
+
+#: includes/customizer.php:123
+msgid "Exo 2 / Open Sans"
+msgstr ""
+
+#: includes/customizer.php:124
+msgid "Orbitron / Raleway"
+msgstr ""
+
+#: includes/customizer.php:125
+msgid "Poppins / Open Sans"
+msgstr ""
+
+#: includes/customizer.php:138
+msgid "Background Color"
+msgstr ""
+
+#: includes/customizer.php:152
+msgid "Text Color"
+msgstr ""
+
+#: includes/customizer.php:166
+msgid "Secondary Color"
+msgstr ""
+
+#: includes/customizer.php:181
+msgid "Cursor Effect"
+msgstr ""
+
+#: includes/customizer.php:195
+msgid "Loading Text"
+msgstr ""
+
+#: includes/customizer.php:209
+msgid "Audio"
+msgstr ""
+
+#: includes/customizer.php:223
+msgid "Footer Left"
+msgstr ""
+
+#: includes/customizer.php:224
+msgid "Displayed when no Audio is selected."
+msgstr ""
+
+#: includes/customizer.php:238
+msgid "Footer Right"
+msgstr ""
+
+#: includes/customizer.php:239
+msgid "Displayed when no Footer Menu is selected."
+msgstr ""
+
+#: includes/customizer.php:255
+msgid "Slideshow"
+msgstr ""
+
+#: includes/customizer.php:268
+msgid "Slideshow Autoplay"
+msgstr ""
+
+#: includes/customizer.php:282
+msgid "Autoplay Delay (ms)"
+msgstr ""
+
+#: includes/customizer.php:294
+msgid "Portfolio"
+msgstr ""
+
+#: includes/customizer.php:307 includes/customizer.php:374
+msgid "Share Links"
+msgstr ""
+
+#: includes/customizer.php:319
+msgid "Blog"
+msgstr ""
+
+#: includes/customizer.php:331
+msgid "Sidebar Background Color"
+msgstr ""
+
+#: includes/customizer.php:345
+msgid "Sidebar Text Color"
+msgstr ""
+
+#: includes/customizer.php:360
+msgid "Show Author"
+msgstr ""
+
+#: layouts/blog-layout.php:19
+msgid "Read More"
+msgstr ""
+
+#: layouts/blog-post-meta.php:15 single.php:44
+msgid "0 Comments"
+msgstr ""
+
+#: layouts/blog-post-meta.php:15 single.php:44
+msgid "1 Comment"
+msgstr ""
+
+#: layouts/blog-post-meta.php:15 single.php:44
+msgid "% Comments"
+msgstr ""
+
+#: layouts/portfolio-carousel.php:35 layouts/portfolio-film.php:39
+#: layouts/portfolio-slideshow.php:39
+msgid "View Project"
+msgstr ""
+
+#: searchform.php:3
+msgctxt "placeholder"
+msgid "Search&hellip;"
+msgstr ""
+
+#: searchform.php:4
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: single-portfolio.php:53
+msgid "Date:"
+msgstr ""
+
+#: single-portfolio.php:56
+msgid "Client:"
+msgstr ""
+
+#: single-portfolio.php:59
+msgid "Role:"
+msgstr ""
+
+#: single-portfolio.php:64
+msgid "View Link"
+msgstr ""
+
+#: single.php:37
+msgid "Tags:"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Sphere"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://acid7.studio/sphere"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Creative Portfolio Theme for Freelancers"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Acid7"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "acid7.studio"
+msgstr ""

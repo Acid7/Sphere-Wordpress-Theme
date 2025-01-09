@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Constructivism in a dolore roof	</title>
+	<atom:link href="https://sphere-delta.vercel.app/blog/2020/11/15/constructivism-in-a-dolore-roof/feed/" rel="self" type="application/rss+xml" />
+	<link>https://sphere-delta.vercel.app/blog/2020/11/15/constructivism-in-a-dolore-roof/</link>
+	<description>Creative Portfolio Theme</description>
+	<lastBuildDate>Wed, 26 May 2021 17:22:11 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
+	<item>
+		<title>
+		By: Darius Carsin		</title>
+		<link>https://sphere-delta.vercel.app/blog/2020/11/15/constructivism-in-a-dolore-roof/#comment-2</link>
+
+		<dc:creator><![CDATA[Darius Carsin]]></dc:creator>
+		<pubDate>Sun, 20 Dec 2020 17:13:38 +0000</pubDate>
+		<guid isPermaLink="false">https://sphere-delta.vercel.app/sphere/?p=58#comment-2</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;https://sphere-delta.vercel.app/blog/2020/11/15/constructivism-in-a-dolore-roof/#comment-1&quot;&gt;Neon Joe&lt;/a&gt;.
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="https://sphere-delta.vercel.app/blog/2020/11/15/constructivism-in-a-dolore-roof/#comment-1">Neon Joe</a>.</p>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Neon Joe		</title>
+		<link>https://sphere-delta.vercel.app/blog/2020/11/15/constructivism-in-a-dolore-roof/#comment-1</link>
+
+		<dc:creator><![CDATA[Neon Joe]]></dc:creator>
+		<pubDate>Sun, 20 Dec 2020 17:12:52 +0000</pubDate>
+		<guid isPermaLink="false">https://sphere-delta.vercel.app/sphere/?p=58#comment-1</guid>
+
+					<description><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.]]></description>
+			<content:encoded><![CDATA[<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

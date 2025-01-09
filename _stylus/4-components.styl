@@ -1,0 +1,345 @@
+
+// Cursor FX
+
+#cursor
+	display none
+
+@media (any-pointer: fine)
+	#cursor
+		opacity 0
+		display block
+		position fixed
+		z-index 999
+		top 0
+		left 0
+		width 2rem
+		height 2rem
+		border-radius 50%
+		background-color var(--text-color)
+		pointer-events none
+		transition opacity .2s, background-color .5s
+
+@media (max-width: 1280px)
+	#cursor
+		width 1.75rem
+		height 1.75rem
+
+
+
+
+// Menu Opener
+
+#menu-opener
+	display none
+	position relative
+	width 38px
+	height 34px
+	margin-left auto
+	{transition-opacity}
+	&:hover
+		cursor pointer
+	&::before
+	&::after
+	span
+		display inline-block
+		position absolute
+		content ""
+		right 0
+		width 38px
+		height 4px
+		border-radius 4px
+		background var(--text-color)
+		transition transform .3s, opacity .3s, background-color .3s
+	&::before
+		top 6px
+	span
+		top 15px
+	&::after
+		top 24px
+	&:hover
+		&::before
+		&::after
+		span
+			background-color var(--secondary-color)
+
+// Menu Opened
+
+html:not(.is-loading)
+	body.menu-opened
+		#menu-opener
+			&::before
+			&::after
+			span
+				width 32px
+			&::before
+				transform translate(0px, 9px) rotate(-45deg)
+			&::after
+				transform translate(0px, -9px) rotate(45deg)
+			span
+				opacity 0
+
+
+
+// Close Button
+
+body.admin-bar .close-button
+	margin-top var(--admin-bar)
+
+.close-button
+	position absolute
+	top 50%
+	right 0
+	transform translateY(-50%)
+	width 32px
+	height 32px
+	opacity 0
+	pointer-events none
+	{transition-opacity}
+	&::before
+	&::after
+		position absolute
+		content ''
+		width 31px
+		height 4px
+		border-radius 4px
+		left 0
+		top 50%
+		margin-top -2px
+		background-color var(--text-color)
+		transition background-color .3s
+	&::before
+		transform rotate(45deg)
+	&::after
+		transform rotate(-45deg)
+	&:hover
+		cursor pointer
+		&::before
+		&::after
+			background-color var(--secondary-color)
+
+
+
+
+// Back To Top
+
+#back-to-top
+	display flex
+	align-items center
+	justify-content center
+	position absolute
+	top 50%
+	right 0
+	transform translateY(-50%)
+	width 32px
+	height 32px
+	opacity 0
+	pointer-events none
+	transition opacity .5s, color .5s
+	&:hover
+		cursor pointer
+		color var(--secondary-color)
+	&::before
+		display inline-block
+		vertical-align middle
+		font-size 2rem
+		font-family 'theme-icons'
+		content '\f005'
+
+body:not(.fullscreen-menu).scrolled #back-to-top
+	opacity 1
+	pointer-events auto
+
+
+
+
+
+// Buttons
+
+button-style =
+	color var(--text-color)
+	display inline-block
+	vertical-align middle
+	font-family var(--buttons-font)
+	font-weight var(--buttons-font-weight)
+	font-size 1rem
+	text-transform uppercase
+	border-radius 50px
+	text-decoration none
+	white-space nowrap
+	background none
+	border 3px solid var(--text-color)
+	line-height 1.1875
+	padding 1rem 2rem
+	margin-top 2rem
+	margin-bottom 2rem
+	transition color .5s, background-color .4s, opacity .4s
+	&:hover
+		color var(--bg-color)
+		background-color var(--text-color)
+	&:active
+		opacity .6
+
+// Hover
+
+.button
+.entry-content button
+.wp-block-button__link
+	position relative
+	span
+		display inline-block
+		color var(--text-color)
+		transition transform .3s, opacity .3s, color .3s
+	&::after
+		top 50%
+		left 0
+		right 0
+		opacity 0
+		position absolute
+		text-align center
+		content attr(data-hover)
+		transform translateY(100%)
+		color var(--bg-color)
+		transition transform .3s, opacity .3s, color .3s
+	&:hover
+		span
+			opacity 0
+			transform translateY(-100%)
+		&::after
+			opacity 1
+			transform translateY(-50%)
+//
+
+.button
+form button
+form input[type="button"]
+form input[type="submit"]
+	{button-style}
+	&:hover
+		cursor pointer
+	& + .button
+	& + form button
+	& + input[type="button"]
+	& + input[type="submit"]
+		margin-left 1rem
+
+//
+
+.wp-block-buttons
+	margin 2rem auto -1rem !important
+	max-width var(--wrapper-narrow)
+	&.alignright
+		text-align right
+		.wp-block-button
+			margin-left 0
+	.wp-block-button
+		margin-bottom 1rem
+		&:not(:last-child)
+			margin-right 1rem
+
+.wp-block-button
+	color inherit
+	margin-bottom 1.5rem
+	.wp-block-button__link
+		{button-style}
+		margin 0 !important
+	&.alignright
+		text-align right
+	&.is-style-fill
+		.wp-block-button__link
+			background-color var(--text-color)
+			span
+				color var(--bg-color)
+
+
+
+
+// Share Links
+
+.share-article
+	margin var(--spacer-lg) auto 0
+	text-align center
+	.share-title
+		margin 0
+		font-family var(--subheading-font)
+		font-weight var(--subheading-font-weight)
+		text-transform var(--subheading-transform)
+		letter-spacing var(--subheading-spacing)
+		font-size var(--xxl-subheading)
+		{transition-opacity}
+	.share-links
+		font-family var(--buttons-font)
+		font-weight var(--buttons-font-weight)
+		font-size var(--xxl-subheading)
+		white-space nowrap
+		position absolute
+		top 50%
+		left 50%
+		transform translate3d(-50%, -50%, 0)
+		opacity 0
+		pointer-events none
+		{transition-opacity}
+		a
+			display inline-block
+			padding .5rem calc(var(--spacer-sm) / 2)
+			text-decoration none
+			&:hover
+				color var(--secondary-color)
+
+	.share-wrapper
+		display inline-block
+		position relative
+		&:hover
+			.share-title
+				opacity 0
+				{transition-opacity}
+			.share-links
+				opacity 1
+				{transition-opacity}
+				pointer-events auto
+
+
+
+
+// Counter
+
+.wp-block-a7x-counter
+	display flex
+	flex-wrap wrap
+	justify-content space-around
+	margin-top var(--spacer-md)
+	margin-bottom var(--spacer-md)
+	.counter-item
+		flex-grow 1
+		flex-basis 0
+		font-family var(--heading-font)
+		font-weight var(--heading-font-weight)
+		text-align center
+		padding 1rem 1rem
+		&:empty
+			display none
+	.counter-number
+		margin -1rem 0 .25rem
+		font-size var(--h1-font-size)
+		line-height var(--h1-line-height)
+	.counter-text
+		display inline-block
+		font-family var(--subheading-font)
+		font-weight var(--subheading-font-weight)
+		text-transform var(--subheading-transform)
+		letter-spacing var(--subheading-spacing)
+		font-size var(--h123-subheading)
+		background-color var(--secondary-bg)
+		padding-left .25rem
+		white-space nowrap
+		line-height 1.3
+
+// Margin between wide/full blocks
+
+.entry-content > [class*="wp-block"].alignwide
+.entry-content > [class*="wp-block"].alignfull
+	& + .wp-block-a7x-counter
+		margin-top calc((var(--spacer-lg) - var(--spacer-md)) * -1)
+		margin-bottom var(--spacer-md)
+		& + [class*="wp-block"].alignwide
+		& + [class*="wp-block"].alignfull
+			margin-top var(--spacer-md)

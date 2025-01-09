@@ -1,0 +1,333 @@
+
+// Portfolio Items
+
+.portfolio-items
+	.post-title-wrapper
+		display flex
+		flex-flow column
+	.title-link
+		margin-right auto
+		text-decoration none
+	.post-category span:not(:first-child)
+		margin-left .5em
+	a:hover
+		color currentColor
+
+// View Project Hover
+
+.view-project-wrapper
+	position relative
+	margin-left 0
+	margin-right auto
+	span
+		display inline-block
+		transition transform .4s, opacity .4s
+		will-change opacity, transform
+	.view-project
+		position absolute
+		left 0
+		bottom 0
+		transform translateY(.5em)
+		opacity 0
+		transition transform .4s, opacity .4s
+		will-change opacity, transform
+		white-space nowrap
+
+.title-link:hover + .view-project-wrapper
+.view-project-wrapper:hover
+	span
+		opacity 0
+		transform translateY(-.5em)
+	.view-project
+		opacity 1
+		transform translateY(0)
+
+
+
+
+
+
+// Slideshow
+
+@keyframes fadeIn
+	0%
+		opacity 0
+	100%
+		opacity 1
+
+@keyframes fadeOut
+	0%
+		opacity 1
+	100%
+		opacity 0
+
+.flickity-enabled.is-fade
+	.flickity-slider > *
+		pointer-events none
+		z-index 0
+	.flickity-slider > .is-selected
+		pointer-events auto
+		z-index 1
+//
+
+body.admin-bar
+	.portfolio-slideshow .image-wrapper
+		top calc(var(--vertical-rim) * 2 + var(--header-height) + var(--admin-bar))
+
+.portfolio-slideshow
+	position fixed
+	top 0
+	left 0
+	right 0
+	bottom 0
+	article
+		width 100%
+		height 100%
+		display flex
+		align-items center
+		justify-content center
+		opacity 0 !important
+		&:not(.is-selected)
+			animation fadeOut ease .5s
+			.image-wrapper img
+				transform scale(1.1)
+		&.is-selected
+			opacity 1 !important
+			animation fadeIn ease .5s
+		&.is-previous .post-title-wrapper
+			transform translateX(-5%)
+		&.is-next .post-title-wrapper
+			transform translateX(5%)
+
+		.image-wrapper
+			position absolute
+			top calc(var(--vertical-rim) * 2 + var(--header-height))
+			left 50%
+			right calc(var(--horizontal-rim) * 2 + var(--button-size))
+			bottom calc(var(--vertical-rim) * 2 + var(--footer-height))
+			overflow hidden
+			{box-shadow}
+			img
+				width 100%
+				height 100%
+				object-fit cover
+				transition transform 1.2s cubic-bezier(0.13, 0.28, 0, 0.91)
+		.post-title-wrapper
+			max-width 1440px
+			margin-left auto
+			margin-right auto
+			width 100%
+			text-align left
+			transition transform 1s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 1s cubic-bezier(0.13, 0.28, 0, 0.91)
+			will-change transform, opacity
+		.post-title
+			display inline-block
+			margin var(--spacer-sm) 0 0
+			font-size var(--xxl-font-size)
+			line-height var(--xxl-line-height)
+		.subheading
+			font-size var(--xxl-subheading)
+		.view-project-wrapper
+			padding-top var(--spacer-sm)
+			margin-top 0
+		.post-category
+			margin-bottom 0
+			text-transform lowercase
+
+	.view-project-wrapper .view-project
+		transform translateY(.3em)
+	.title-link:hover + .view-project-wrapper
+	.view-project-wrapper:hover
+		span
+			transform translateY(-.3em)
+		.view-project
+			transform translateY(0)
+
+html.is-loading
+	.portfolio-slideshow
+		article.is-selected
+			.image-wrapper img
+				transform scale(1.1)
+			.post-title-wrapper
+				transform translateX(5%)
+				opacity 0
+
+
+
+
+
+
+// Carousel
+
+.portfolio-carousel
+	margin-left calc(var(--horizontal-rim) + var(--button-size))
+	margin-right calc(var(--horizontal-rim) + var(--button-size))
+	.flickity-viewport
+		position fixed
+		top 0
+		bottom 0
+		left calc(var(--horizontal-rim) * 2 + var(--button-size))
+		right calc(var(--horizontal-rim) * 2 + var(--button-size))
+	.flickity-slider
+		display flex
+		align-items center
+
+.portfolio-carousel
+	article
+		width calc((100% - calc(var(--spacer-md) * 3)) / 4)
+		margin 0 calc(var(--spacer-md) / 2)
+		transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+		will-change transform, opacity
+		.post-year
+			margin-bottom 1.2rem
+		.image-wrapper img
+			width 100%
+			height 100%
+			max-height calc(var(--viewport-height) - calc(var(--vertical-rim) * 4) - var(--header-height) - var(--footer-height) - calc(var(--h456-subheading) * 2) - var(--h4-line-height) - 3rem) // Window height - rims, header & footer, text sizes
+			object-fit cover
+		.post-title
+			margin 1rem 0 .5rem
+			font-size var(--h4-font-size)
+			line-height var(--h4-line-height)
+		.subheading
+			font-size var(--h456-subheading)
+
+html.is-loading
+	.portfolio-carousel article
+		transform scale(1.1)
+		opacity 0
+
+
+
+
+
+// Titles
+
+.portfolio-titles
+	display flex
+	flex-flow column
+	align-items center
+	article
+		z-index 1
+		position relative
+		text-align center
+		visibility hidden
+		&:first-child .title-link
+			padding-top 0
+		&:last-child .title-link
+			padding-bottom 0
+		&:hover
+			z-index 2
+		&.is-selected .image-wrapper img
+			{box-shadow}
+
+		.image-wrapper
+			z-index -1
+			position absolute
+			left 0
+			opacity 0
+			pointer-events none
+			will-change transform, opacity
+			{transition-opacity}
+
+		.title-link
+			display block
+			position relative
+			padding calc(var(--spacer-md) / 2) 0
+
+		.post-year
+			position absolute
+			left -1rem
+			transform translateX(-125%)
+			pointer-events none
+			opacity 0
+			transition opacity .5s, transform .5s
+
+		.post-title
+			margin 1rem 0 0
+
+		&:hover .post-year
+			transform translateX(-100%)
+			opacity 1
+
+
+
+
+
+// Film
+
+.portfolio-film
+	.flickity-viewport
+		overflow visible
+	.flickity-prev-next-button
+		&.previous
+		&.next
+			top auto
+			bottom calc(var(--vertical-rim) - calc(var(--button-size) / 2 + .55rem))
+			margin-left calc(var(--scrollbar-gap) / -2)
+		&.previous
+			left calc(50% - calc(var(--xxl-font-size) / 2) - var(--button-size) - 6px - 4rem)
+		&.next
+			left calc(50% + calc(var(--xxl-font-size) / 2 + 4rem))
+			margin-right 0
+			right auto
+
+.portfolio-film
+	article
+		width 45%
+		margin 0 8%
+		position relative
+		transition transform 2s cubic-bezier(0.13, 0.28, 0, 0.91), opacity 2s cubic-bezier(0.13, 0.28, 0, 0.91)
+		will-change opacity, transform
+		&:not(.is-selected)
+			.post-year
+			.post-title-wrapper
+				opacity 0
+				pointer-events none
+		&.is-previous
+			.post-year
+				transform translateX(-50%)
+			.post-title-wrapper
+				transform translateX(-20%) translateY(-50%)
+		&.is-next
+			.post-year
+				transform translateX(50%)
+			.post-title-wrapper
+				transform translateX(20%) translateY(-50%)
+
+		.image-wrapper
+			{box-shadow}
+
+		.post-year
+			position absolute
+			right 0
+			top calc(0rem - 1em - 1.75rem)
+			font-family var(--subheading-font)
+			font-weight var(--subheading-font-weight)
+			text-transform var(--subheading-transform)
+			letter-spacing var(--subheading-spacing)
+			font-size var(--h123-subheading)
+			transition transform .5s, opacity .5s
+			will-change transform, opacity
+		.post-title-wrapper
+			position absolute
+			left calc(0rem - var(--spacer-md))
+			top 50%
+			transform translateY(-50%)
+			transition transform .5s, opacity .5s
+			will-change transform, opacity
+		.post-title
+			margin 0
+			font-size var(--xl-font-size)
+			line-height var(--xl-line-height)
+		.subheading
+			font-size var(--xl-subheading)
+		.view-project-wrapper
+			position absolute
+			left 0
+			bottom calc(-2rem - var(--xl-subheading))
+
+html.is-loading
+	.portfolio-film article
+		transform scale(1.1)
+		opacity 0
